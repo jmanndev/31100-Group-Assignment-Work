@@ -1,0 +1,6 @@
+# Files in following directories always change at each local build.
+InterventionMonitor/InterventionMonitor/obj/Debug/*
+InterventionMonitor/InterventionMonitor/bin/*
+
+# Everyone has their own data in the DB for now.
+InterventionMonitor/InterventionMonitor/App_Data/*
