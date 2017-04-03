@@ -1,4 +1,9 @@
 # 31100-Group-Assignment-Work #
+**Team Name:** Triple-J Gee
+* Jonathan Mann (11393269)
+* Jenny Nguyen (11236662)
+* Wen Yen George Du (11747969)
+* Jordan Labonne (12002491)
 
 ## Code Standards ##
 ### Project ###
