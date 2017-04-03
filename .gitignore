@@ -4,3 +4,6 @@ InterventionMonitor/InterventionMonitor/bin/*
 
 # Everyone has their own data in the DB for now.
 InterventionMonitor/InterventionMonitor/App_Data/*
+
+# Don't add SUO files as they differ per user.
+*.suo
