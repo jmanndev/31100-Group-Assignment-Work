@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using InterventionMonitor.Models;
 
 namespace InterventionMonitor.Tests
 {
@@ -32,9 +33,46 @@ namespace InterventionMonitor.Tests
              
          */
 
-        [TestMethod]
-        public void TestMethod1()
+        [TestClass]
+        public class DistrictTest
         {
+            [TestMethod]
+            public void Equals_ComparesName()
+            {
+                Assert.AreEqual(Districts.Instance.UrbanIndonesia, Districts.Instance.UrbanIndonesia);
+                Assert.AreNotEqual(Districts.Instance.RuralIndonesia, Districts.Instance.Sydney);
+            }
+        }
+
+        [TestClass]
+        public class SiteEngineerTest
+        {
+            SiteEngineer siteEngineer;
+
+            [TestInitialize]
+            public void Setup()
+            {
+                siteEngineer = new SiteEngineer();
+            }
+
+            [TestMethod]
+            public void CreateClient_WithNonNullName_AddsExtraClient()
+            {
+                var previousCount = Monitor.Instance.clients.Count;
+                siteEngineer.CreateClient("payless shoes");
+
+                int expectedCount = previousCount + 1;
+                Assert.AreEqual(expectedCount, Monitor.Instance.clients.Count);
+            }
+
+            [TestMethod]
+            public void CreateClient_WithNullName_AddsNoClient()
+            {
+                var previousCount = Monitor.Instance.clients.Count;
+                siteEngineer.CreateClient(null);
+                
+                Assert.AreEqual(previousCount, Monitor.Instance.clients.Count);
+            }
         }
     }
 }

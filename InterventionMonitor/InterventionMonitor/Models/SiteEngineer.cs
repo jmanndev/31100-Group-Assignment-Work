@@ -30,5 +30,17 @@ namespace InterventionMonitor.Models
             get;
             set;
         }
+
+        public void CreateClient(string name)
+        {
+            if (name == null)
+            {
+                return;
+            }
+
+            var client = new Client();
+            client.Name = name;
+            Monitor.Instance.clients.Add(client);
+        }
     }
 }

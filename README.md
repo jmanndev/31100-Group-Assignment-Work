@@ -41,6 +41,6 @@
   }
   ```
 - Tab spaces. Use default VS2015 Community settings which seems to be Tab Size 4. Indent Size 4. Insert Spaces.
-
+- Individual tests are named as `[Unit]_[State]_[Result]`, e.g. `Dividing_FourByZero_Errors`
 ### Version Control ###
 - For each commit message, have it start with an active verb. E.g. `Update code standards on README file.`
