@@ -40,5 +40,7 @@
     private set { _studentID = value; }
   }
   ```
+- Tab spaces. Use default VS2015 Community settings which seems to be Tab Size 4. Indent Size 4. Insert Spaces.
+
 ### Version Control ###
 - For each commit message, have it start with an active verb. E.g. `Update code standards on README file.`
