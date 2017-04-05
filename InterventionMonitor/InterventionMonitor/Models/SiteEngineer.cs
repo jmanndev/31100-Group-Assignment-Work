@@ -42,5 +42,15 @@ namespace InterventionMonitor.Models
             client.Name = name;
             Monitor.Instance.clients.Add(client);
         }
+
+        public bool CreateIntervention(Client client)
+        {
+            if (this.District != client.District)
+                return false;
+
+            //Continue on creating intervention, return true if
+            //intervention was created successful
+            return true;
+        }
     }
 }

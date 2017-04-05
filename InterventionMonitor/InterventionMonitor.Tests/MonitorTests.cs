@@ -73,6 +73,20 @@ namespace InterventionMonitor.Tests
                 
                 Assert.AreEqual(previousCount, Monitor.Instance.clients.Count);
             }
+
+            [TestMethod]
+            public void CreateIntervention_DifferentDistrict_AddsNoIntervention()
+            {
+                siteEngineer.District = Districts.Instance.Sydney;
+                siteEngineer.CreateClient("Josia");
+
+                var newClient = Monitor.Instance.clients[Monitor.Instance.clients.Count - 1];
+                newClient.District = Districts.Instance.RuralNewSouthWales;
+
+                bool interventionCreated = siteEngineer.CreateIntervention(newClient);
+
+                Assert.AreNotEqual(interventionCreated, true);
+            }
         }
     }
 }
