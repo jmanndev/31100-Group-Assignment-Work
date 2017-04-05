@@ -87,44 +87,11 @@ namespace InterventionMonitor.Tests
 
                 Assert.AreNotEqual(interventionCreated, true);
             }
-        }
-
-        [TestClass]
-        public class InterventionTest
-        {
-            Intervention intervention;
-            SiteEngineer siteEngineer;
-
-            [TestInitialize]
-            public void Setup()
-            {
-                intervention = new Intervention();
-            }
-
-            [TestMethod]
-            public void CreateIntervention_Initialized_isApprovedFalse()
-            {
-                Assert.AreEqual(intervention.isApproved, false);
-            }
-
-            [TestMethod]
-            public void ApproveIntervention_AfterApproval_isApprovedTrue()
-            {
-                intervention.ApproveIntervention(new SiteEngineer());
-                Assert.AreEqual(intervention.isApproved, true);
-            }
-
-            [TestMethod]
-            public void ApproveIntervention_AfterApproval_ApproverSaved()
-            {
-                siteEngineer = new SiteEngineer();
-                intervention.ApproveIntervention(siteEngineer);
-                Assert.AreEqual(intervention.ApprovedBy, siteEngineer);
-            }
 
             [TestMethod]
             public void ApproveIntervention_CostHigherThanApproverAllowed_ApprovalFails()
             {
+                Intervention intervention = new Intervention();
                 siteEngineer = new SiteEngineer();
                 siteEngineer.CostLimit = 1;
                 intervention.CostRequired = 9999;
@@ -136,6 +103,7 @@ namespace InterventionMonitor.Tests
             [TestMethod]
             public void ApproveIntervention_CostLowerThanApproverAllowed_ApprovalSuccess()
             {
+                Intervention intervention = new Intervention();
                 siteEngineer = new SiteEngineer();
                 siteEngineer.CostLimit = 9999;
                 intervention.CostRequired = 1;
@@ -147,6 +115,7 @@ namespace InterventionMonitor.Tests
             [TestMethod]
             public void ApproveIntervention_CostEqualToApproverAllowed_ApprovalSuccess()
             {
+                Intervention intervention = new Intervention();
                 siteEngineer = new SiteEngineer();
                 siteEngineer.CostLimit = 1;
                 intervention.CostRequired = 1;
@@ -170,6 +139,39 @@ namespace InterventionMonitor.Tests
                 Intervention intervention2 = siteEngineer.CreateIntervention(newClient, interventionType);
 
                 Assert.IsTrue(intervention2.InterventionType.Name.Equals("Mosquito Net"));
+            }
+        }
+
+        [TestClass]
+        public class InterventionTest
+        {
+            Intervention intervention;
+
+            [TestInitialize]
+            public void Setup()
+            {
+                intervention = new Intervention();
+            }
+
+            [TestMethod]
+            public void CreateIntervention_Initialized_isApprovedFalse()
+            {
+                Assert.AreEqual(intervention.isApproved, false);
+            }
+
+            [TestMethod]
+            public void ApproveIntervention_AfterApproval_isApprovedTrue()
+            {
+                intervention.ApproveIntervention(new SiteEngineer());
+                Assert.AreEqual(intervention.isApproved, true);
+            }
+
+            [TestMethod]
+            public void ApproveIntervention_AfterApproval_ApproverSaved()
+            {
+                SiteEngineer siteEngineer = new SiteEngineer();
+                intervention.ApproveIntervention(siteEngineer);
+                Assert.AreEqual(intervention.ApprovedBy, siteEngineer);
             }
         }
     }
