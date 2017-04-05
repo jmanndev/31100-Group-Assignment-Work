@@ -43,14 +43,12 @@ namespace InterventionMonitor.Models
             Monitor.Instance.clients.Add(client);
         }
 
-        public bool CreateIntervention(Client client)
+        public Intervention CreateIntervention(Client client)
         {
             if (this.District != client.District)
-                return false;
+                throw new ArgumentException("engineer should be same district as client");
 
-            //Continue on creating intervention, return true if
-            //intervention was created successful
-            return true;
+            return new Intervention();
         }
 
         public Intervention CreateIntervention(Client client, InterventionType interventionType)

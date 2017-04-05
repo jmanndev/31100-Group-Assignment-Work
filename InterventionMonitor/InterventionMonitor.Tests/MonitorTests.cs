@@ -34,17 +34,6 @@ namespace InterventionMonitor.Tests
          */
 
         [TestClass]
-        public class DistrictTest
-        {
-            [TestMethod]
-            public void Equals_ComparesName()
-            {
-                Assert.AreEqual(Districts.Instance.UrbanIndonesia, Districts.Instance.UrbanIndonesia);
-                Assert.AreNotEqual(Districts.Instance.RuralIndonesia, Districts.Instance.Sydney);
-            }
-        }
-
-        [TestClass]
         public class SiteEngineerTest
         {
             SiteEngineer siteEngineer;
@@ -75,7 +64,8 @@ namespace InterventionMonitor.Tests
             }
 
             [TestMethod]
-            public void CreateIntervention_DifferentDistrict_AddsNoIntervention()
+            [ExpectedException(typeof(ArgumentException))]
+            public void CreateIntervention_DifferentDistrict_ThrowsArgumentException()
             {
                 siteEngineer.District = Districts.Instance.Sydney;
                 siteEngineer.CreateClient("Josia");
@@ -83,9 +73,9 @@ namespace InterventionMonitor.Tests
                 var newClient = Monitor.Instance.clients[Monitor.Instance.clients.Count - 1];
                 newClient.District = Districts.Instance.RuralNewSouthWales;
 
-                bool interventionCreated = siteEngineer.CreateIntervention(newClient);
+                var interventionCreated = siteEngineer.CreateIntervention(newClient);
 
-                Assert.AreNotEqual(interventionCreated, true);
+                Assert.IsNull(interventionCreated);
             }
 
             [TestMethod]
