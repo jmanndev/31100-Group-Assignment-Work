@@ -123,6 +123,23 @@ namespace InterventionMonitor.Tests
                 siteEngineer.ApproveIntervention(intervention);
                 Assert.AreEqual(intervention.isApproved, true);
             }
+
+            [TestMethod]
+            public void CreateIntervention_MosquitoNet()
+            {
+                SiteEngineer siteEngineer = new SiteEngineer(); 
+                InterventionType interventionType = new InterventionType();
+                interventionType.Name = "Mosquito Net";
+                siteEngineer.District = Districts.Instance.Sydney;
+                siteEngineer.CreateClient("Josia");
+                
+                var newClient = Monitor.Instance.clients[Monitor.Instance.clients.Count - 1];
+                newClient.District = Districts.Instance.Sydney;
+
+                Intervention intervention2 = siteEngineer.CreateIntervention(newClient, interventionType);
+
+                Assert.IsTrue(intervention2.InterventionType.Name.Equals("Mosquito Net"));
+            }
         }
 
         [TestClass]

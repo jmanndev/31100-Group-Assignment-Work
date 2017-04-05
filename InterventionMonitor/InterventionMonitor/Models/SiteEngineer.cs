@@ -53,8 +53,16 @@ namespace InterventionMonitor.Models
             return true;
         }
 
-        /*
-         * Function could be moved to parent class if other types of users can approve interventions.  
+        public Intervention CreateIntervention(Client client, InterventionType interventionType)
+        {
+            Intervention intervention = new Intervention(this, client, interventionType);
+            //Continue on creating intervention, return true if
+            //intervention was created successful
+            return intervention;
+        }
+        
+        
+        /* * Function could be moved to parent class if other types of users can approve interventions.  
          **/
         public bool ApproveIntervention(Intervention interventionToApprove)
         {
