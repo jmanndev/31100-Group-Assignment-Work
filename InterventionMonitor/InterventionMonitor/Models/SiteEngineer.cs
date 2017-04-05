@@ -53,6 +53,15 @@ namespace InterventionMonitor.Models
             return true;
         }
 
+        public Intervention CreateIntervention(Client client, InterventionType interventionType)
+        {
+            Intervention intervention = new Intervention(this, client, interventionType);
+            //Continue on creating intervention, return true if
+            //intervention was created successful
+            return intervention;
+        }
+
+
         public void ApproveIntervention(Intervention interventionToApprove)
         {
             if (interventionToApprove.CostRequired <= this.CostLimit)

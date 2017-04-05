@@ -13,6 +13,13 @@ namespace InterventionMonitor.Models
             isApproved = false;
         }
 
+        public Intervention(SiteEngineer siteEngineer, Client client, InterventionType interventionType)
+        {
+            RequestedBy = siteEngineer;
+            Client = client;
+            InterventionType = interventionType;
+        }
+
         [Key]
         public int ID
         {
@@ -71,6 +78,12 @@ namespace InterventionMonitor.Models
         }
 
         public ApplicationUser ApprovedBy
+        {
+            get;
+            set;
+        }
+
+        public InterventionType InterventionType
         {
             get;
             set;
