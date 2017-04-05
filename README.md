@@ -40,7 +40,7 @@
     private set { _studentID = value; }
   }
   ```
-- Boolean class variables should be named with an `is` prefix,  e.g. `isApproved`; 
+- Boolean class variables should be named with an `is` prefix,  e.g. `public bool isApproved`; 
 - Tab spaces. Use default VS2015 Community settings which seems to be Tab Size 4. Indent Size 4. Insert Spaces.
 - Individual tests are named as `[Unit]_[State]_[Result]`, e.g. `Dividing_FourByZero_Errors`
 ### Version Control ###
