@@ -21,7 +21,7 @@ namespace InterventionMonitor.Models
     }
 
     // Thread-safe singleton pattern for Districts that cannot be overridden by another class.
-    public class Districts
+    public sealed class Districts
     {
         static Districts()
         {

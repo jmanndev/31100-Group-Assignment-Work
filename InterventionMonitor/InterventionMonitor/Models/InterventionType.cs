@@ -39,16 +39,5 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        public int Life
-        {
-            get;
-            set;
-        }
-
-        public Intervention Visit
-        {
-            get;
-            set;
-        }
     }
 }
