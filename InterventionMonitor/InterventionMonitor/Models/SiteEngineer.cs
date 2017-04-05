@@ -53,12 +53,20 @@ namespace InterventionMonitor.Models
             return true;
         }
 
-        public void ApproveIntervention(Intervention interventionToApprove)
+        /*
+         * Function could be moved to parent class if other types of users can approve interventions.  
+         **/
+        public bool ApproveIntervention(Intervention interventionToApprove)
         {
-            if (interventionToApprove.CostRequired <= this.CostLimit)
+            if (interventionToApprove.CostRequired > this.CostLimit)
             {
-                interventionToApprove.ApproveIntervention(this);
+                return false;
             }
+
+            interventionToApprove.ApproveIntervention(this);
+            //add more checking of approval criteria here
+            //return true if intervention is successfully approved
+            return true;
         }
     }
 }

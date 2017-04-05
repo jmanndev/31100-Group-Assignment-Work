@@ -88,9 +88,13 @@ namespace InterventionMonitor.Models
          * to InterventionType instead. Also renamed:
          * - "SiteEngineer" to "RequestedBy"
          * - "LastVisit" to "PreviousVisit".
-         **/
+         ** /
 
 
+
+        /*
+         * @param approver - should eventually be restricted to user types who are allowed to approve interventions.
+         * */
         public void ApproveIntervention(ApplicationUser approver)
         {
             ApprovedBy = approver;
