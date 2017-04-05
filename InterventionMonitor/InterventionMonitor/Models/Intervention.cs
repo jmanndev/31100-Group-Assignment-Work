@@ -8,6 +8,11 @@ namespace InterventionMonitor.Models
 {
     public class Intervention
     {
+        public Intervention()
+        {
+            isApproved = false;
+        }
+
         [Key]
         public int ID
         {
@@ -71,12 +76,26 @@ namespace InterventionMonitor.Models
             set;
         }
 
+        public bool isApproved //THiS NEEDS TO BE SET TO FALSE WHEN A NEW INTERVENTION IS CREATED
+        {
+            get;
+            set;
+        }
+
+
         /* Jenny:
          * Using the DB diagram as reference, Life looks to belong
          * to InterventionType instead. Also renamed:
          * - "SiteEngineer" to "RequestedBy"
          * - "LastVisit" to "PreviousVisit".
          **/
+
+
+        public void ApproveIntervention(ApplicationUser approver)
+        {
+            ApprovedBy = approver;
+            isApproved = true;
+        }
     }
 }
  

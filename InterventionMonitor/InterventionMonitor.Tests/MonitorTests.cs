@@ -70,7 +70,7 @@ namespace InterventionMonitor.Tests
             {
                 var previousCount = Monitor.Instance.clients.Count;
                 siteEngineer.CreateClient(null);
-                
+
                 Assert.AreEqual(previousCount, Monitor.Instance.clients.Count);
             }
 
@@ -86,6 +86,39 @@ namespace InterventionMonitor.Tests
                 bool interventionCreated = siteEngineer.CreateIntervention(newClient);
 
                 Assert.AreNotEqual(interventionCreated, true);
+            }
+        }
+
+        [TestClass]
+        public class InterventionTest
+        {
+            Intervention intervention;
+
+            [TestInitialize]
+            public void Setup()
+            {
+                intervention = new Intervention();
+            }
+
+            [TestMethod]
+            public void CreateIntervention_Initialized_isApprovedFalse()
+            {
+                Assert.AreEqual(intervention.isApproved, false);
+            }
+
+            [TestMethod]
+            public void ApproveIntervention_AfterApproval_isApprovedTrue()
+            {
+                intervention.ApproveIntervention(new SiteEngineer());
+                Assert.AreEqual(intervention.isApproved, true);
+            }
+
+            [TestMethod]
+            public void ApproveIntervention_AfterApproval_ApproverSaved()
+            {
+                SiteEngineer siteEngineer = new SiteEngineer();
+                intervention.ApproveIntervention(siteEngineer);
+                Assert.AreEqual(intervention.ApprovedBy, siteEngineer);
             }
         }
     }
