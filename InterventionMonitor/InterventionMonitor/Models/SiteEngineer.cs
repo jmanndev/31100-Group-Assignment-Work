@@ -52,5 +52,13 @@ namespace InterventionMonitor.Models
             //intervention was created successful
             return true;
         }
+
+        public void ApproveIntervention(Intervention interventionToApprove)
+        {
+            if (interventionToApprove.CostRequired <= this.CostLimit)
+            {
+                interventionToApprove.ApproveIntervention(this);
+            }
+        }
     }
 }

@@ -76,7 +76,7 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        public bool isApproved //THiS NEEDS TO BE SET TO FALSE WHEN A NEW INTERVENTION IS CREATED
+        public bool isApproved
         {
             get;
             set;
