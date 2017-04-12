@@ -13,6 +13,7 @@ namespace InterventionMonitor.Models
         public List<SiteEngineer> siteEngineers = new List<SiteEngineer>();
         public List<Manager> managers = new List<Manager>();
         public List<Client> clients = new List<Client>();
+        public List<District> districts = new List<District>();
 
         static Monitor()
         {
