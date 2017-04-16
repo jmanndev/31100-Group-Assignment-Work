@@ -27,17 +27,17 @@
             </p>
             <p style="margin-top: 34px; margin-bottom: 0px;">
             <asp:Label ID="Label1" runat="server" Text="Username:"></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
                 <br />
 
                 <br />
             <asp:Label ID="Label2" runat="server" Text="Password:"></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
                 </p>
             <p style="margin-top: 0px; height: 51px; margin-bottom: 0px;">
                 &nbsp;</p>
             <p style="height: 52px; margin-top: 0px">
-                <asp:Button ID="Button1" runat="server" BackColor="#6600FF" Font-Size="Large" ForeColor="White" Height="35px" Text="Login" Width="272px" />
+                <asp:Button ID="Button1" runat="server" BackColor="#6600FF" Font-Size="Large" ForeColor="White" Height="35px" Text="Login" Width="272px" Onclick="LogIn"/>
                 
             </p>
         </asp:Panel>
