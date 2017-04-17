@@ -32,5 +32,10 @@ namespace InterventionMonitor.Models
                 return _instance;
             }
         }
+
+        public Client GetNewestClient()
+        {
+            return clients[clients.Count - 1];
+        }
     }
 }
