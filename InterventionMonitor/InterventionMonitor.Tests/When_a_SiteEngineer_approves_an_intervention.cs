@@ -24,7 +24,7 @@ namespace InterventionMonitor.Tests
             intervention.CostRequired = 9999;
 
             siteEngineer.ApproveIntervention(intervention);
-            Assert.AreEqual(intervention.isApproved, false);
+            Assert.IsFalse(intervention.isApproved);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace InterventionMonitor.Tests
             intervention.CostRequired = 1;
 
             siteEngineer.ApproveIntervention(intervention);
-            Assert.AreEqual(intervention.isApproved, true);
+            Assert.IsTrue(intervention.isApproved);
         }
 
         [TestMethod]
@@ -44,7 +44,7 @@ namespace InterventionMonitor.Tests
             intervention.CostRequired = 1;
 
             siteEngineer.ApproveIntervention(intervention);
-            Assert.AreEqual(intervention.isApproved, true);
+            Assert.IsTrue(intervention.isApproved);
         }
     }
 }
