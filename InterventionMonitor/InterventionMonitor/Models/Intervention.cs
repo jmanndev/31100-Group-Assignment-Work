@@ -113,6 +113,15 @@ namespace InterventionMonitor.Models
             ApprovedBy = approver;
             isApproved = true;
         }
+
+        public string DisplayValue
+        {
+            get
+            {
+                return Client.Name + " - " + InterventionType.Name;
+            }
+        }
+            
     }
 }
  

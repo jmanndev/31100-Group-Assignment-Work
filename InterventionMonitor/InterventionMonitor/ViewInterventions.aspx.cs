@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using InterventionMonitor.Models;
 
 namespace InterventionMonitor
 {
@@ -11,7 +12,9 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LbInterventions.DataSource = Monitor.Instance.interventions;
+            LbInterventions.DataTextField = "DisplayValue";
+            LbInterventions.DataBind();
         }
     }
 }

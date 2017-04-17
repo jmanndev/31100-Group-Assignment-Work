@@ -56,6 +56,7 @@ namespace InterventionMonitor.Models
             Intervention intervention = new Intervention(this, client, interventionType);
             //Continue on creating intervention, return true if
             //intervention was created successful
+            Monitor.Instance.interventions.Add(intervention);
             return intervention;
         }
         
