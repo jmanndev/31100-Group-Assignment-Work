@@ -5,21 +5,9 @@ using System.Web;
 
 namespace InterventionMonitor.Models
 {
-    public class Manager : ApplicationUser
+    public class Manager : Approver
     {
         public District District
-        {
-            get;
-            set;
-        }
-
-        public decimal HourLimit
-        {
-            get;
-            set;
-        }
-
-        public decimal CostLimit
         {
             get;
             set;

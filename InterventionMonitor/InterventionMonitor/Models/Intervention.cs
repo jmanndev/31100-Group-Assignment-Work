@@ -10,14 +10,14 @@ namespace InterventionMonitor.Models
     {
         public Intervention()
         {
-            isApproved = false;
+            Status = InterventionStatuses.Instance.Proposed;
         }
 
         public Intervention(SiteEngineer siteEngineer, Client client, InterventionType interventionType)
         {
             RequestedBy = siteEngineer;
             Client = client;
-            InterventionType = interventionType;
+            Type = interventionType;
         }
 
         [Key]
@@ -83,42 +83,40 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        public InterventionType InterventionType
+        public InterventionType Type
         {
             get;
             set;
         }
 
-        public bool isApproved
+        public bool IsApproved
+        {
+            get { return Status == InterventionStatuses.Instance.Approved; }
+        }
+
+        public InterventionStatus Status
         {
             get;
             set;
         }
-
-
-        /* Jenny:
-         * Using the DB diagram as reference, Life looks to belong
-         * to InterventionType instead. Also renamed:
-         * - "SiteEngineer" to "RequestedBy"
-         * - "LastVisit" to "PreviousVisit".
-         ** /
-
-
 
         /*
          * @param approver - should eventually be restricted to user types who are allowed to approve interventions.
          * */
-        public void ApproveIntervention(ApplicationUser approver)
+        public void IsMarkedAsApproved(ApplicationUser approver)
         {
-            ApprovedBy = approver;
-            isApproved = true;
+            if (Status == InterventionStatuses.Instance.Proposed)
+            {
+                ApprovedBy = approver;
+                Status = InterventionStatuses.Instance.Approved;
+            }
         }
 
         public string DisplayValue
         {
             get
             {
-                return Client.Name + " - " + InterventionType.Name;
+                return Client.Name + " - " + Type.Name;
             }
         }
             

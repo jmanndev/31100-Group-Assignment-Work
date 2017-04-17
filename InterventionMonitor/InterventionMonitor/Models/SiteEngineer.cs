@@ -5,21 +5,9 @@ using System.Web;
 
 namespace InterventionMonitor.Models
 {
-    public class SiteEngineer : ApplicationUser
+    public class SiteEngineer : Approver
     {
         public District District
-        {
-            get;
-            set;
-        }
-
-        public decimal HourLimit
-        {
-            get;
-            set;
-        }
-
-        public decimal CostLimit
         {
             get;
             set;
@@ -31,16 +19,17 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        public void CreateClient(string name)
+        public Client CreateClient(string name)
         {
             if (name == null)
-            {
-                return;
-            }
+                throw new ArgumentException("client should have name");
 
             var client = new Client();
             client.Name = name;
+            client.District = this.District;
             Monitor.Instance.clients.Add(client);
+
+            return client;
         }
 
         public Intervention CreateIntervention(Client client)
@@ -54,26 +43,9 @@ namespace InterventionMonitor.Models
         public Intervention CreateIntervention(Client client, InterventionType interventionType)
         {
             Intervention intervention = new Intervention(this, client, interventionType);
-            //Continue on creating intervention, return true if
-            //intervention was created successful
+
             Monitor.Instance.interventions.Add(intervention);
             return intervention;
-        }
-        
-        
-        /* * Function could be moved to parent class if other types of users can approve interventions.  
-         **/
-        public bool ApproveIntervention(Intervention interventionToApprove)
-        {
-            if (interventionToApprove.CostRequired > this.CostLimit)
-            {
-                return false;
-            }
-
-            interventionToApprove.ApproveIntervention(this);
-            //add more checking of approval criteria here
-            //return true if intervention is successfully approved
-            return true;
         }
     }
 }

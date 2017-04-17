@@ -27,6 +27,16 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        // TODO: Add the rest of the properties. See DB diagram.
+        public string Address
+        {
+            get;
+            set;
+        }
+
+        public string Notes
+        {
+            get;
+            set;
+        }
     }
 }

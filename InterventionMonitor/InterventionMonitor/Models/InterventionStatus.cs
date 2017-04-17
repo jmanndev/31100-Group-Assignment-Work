@@ -27,4 +27,29 @@ namespace InterventionMonitor.Models
             set;
         }
     }
+
+    // Thread-safe singleton pattern for InterventionStatuses that cannot be overridden by another class.
+    public sealed class InterventionStatuses
+    {
+        static InterventionStatuses()
+        {
+        }
+
+        private InterventionStatuses()
+        {
+        }
+
+        private static readonly InterventionStatuses _instance = new InterventionStatuses();
+        public static InterventionStatuses Instance
+        {
+            get
+            {
+                return _instance;
+            }
+        }
+        public InterventionStatus Proposed = new InterventionStatus() { Name = "Proposed" };
+        public InterventionStatus Approved = new InterventionStatus() { Name = "Approved" };
+        public InterventionStatus Cancelled = new InterventionStatus() { Name = "Cancelled" };
+        public InterventionStatus Completed = new InterventionStatus() { Name = "Completed" };
+    }
 }

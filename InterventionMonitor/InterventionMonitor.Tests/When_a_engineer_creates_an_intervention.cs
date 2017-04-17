@@ -5,7 +5,7 @@ using InterventionMonitor.Models;
 namespace InterventionMonitor.Tests
 {
     [TestClass]
-    public class When_a_SiteEngineer_creates_an_intervention
+    public class When_a_engineer_creates_an_intervention
     {
         SiteEngineer siteEngineer;
         Client newestClient;
@@ -15,8 +15,7 @@ namespace InterventionMonitor.Tests
         {
             siteEngineer = new SiteEngineer();
             siteEngineer.District = Districts.Instance.Sydney;
-            siteEngineer.CreateClient("Josia");
-            newestClient = Monitor.Instance.GetNewestClient();
+            newestClient = siteEngineer.CreateClient("Josia");
         }
 
         [TestMethod]
@@ -28,16 +27,18 @@ namespace InterventionMonitor.Tests
             var interventionCreated = siteEngineer.CreateIntervention(newestClient);
 
             Assert.IsNull(interventionCreated);
+            CollectionAssert.DoesNotContain(Monitor.Instance.interventions, interventionCreated);
         }
 
         [TestMethod]
-        public void For_a_client_who_is_located_at_the_same_district_then_successfully_create_intervention()
+        public void For_a_client_who_is_located_at_the_same_district_then_successfully_create_unsaved_intervention()
         {
             newestClient.District = Districts.Instance.Sydney;
 
             var interventionCreated = siteEngineer.CreateIntervention(newestClient);
 
             Assert.IsNotNull(interventionCreated);
+            CollectionAssert.DoesNotContain(Monitor.Instance.interventions, interventionCreated);
         }
     }
 }

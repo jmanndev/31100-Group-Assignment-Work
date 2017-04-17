@@ -383,6 +383,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Accountant.cs" />
+    <Compile Include="Models\Approver.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\District.cs" />
     <Compile Include="Models\IdentityModels.cs" />

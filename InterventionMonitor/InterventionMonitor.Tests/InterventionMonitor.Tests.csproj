@@ -34,7 +34,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -51,6 +53,10 @@
   <ItemGroup>
     <Compile Include="MonitorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_a_approver_approves_an_intervention.cs" />
+    <Compile Include="When_a_engineer_creates_an_intervention.cs" />
+    <Compile Include="When_a_engineer_creates_an_intervention_for_a_client_in_same_district.cs" />
+    <Compile Include="When_a_engineer_creates_a_client.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InterventionMonitor\InterventionMonitor.csproj">
