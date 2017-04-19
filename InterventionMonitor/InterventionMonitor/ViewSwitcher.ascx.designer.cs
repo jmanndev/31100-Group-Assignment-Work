@@ -7,9 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterventionMonitor {
-    
-    
-    public partial class ViewSwitcher {
+namespace InterventionMonitor
+{
+
+
+    public partial class ViewSwitcher
+    {
     }
 }
