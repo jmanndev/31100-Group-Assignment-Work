@@ -19,13 +19,13 @@ namespace InterventionMonitor.Tests
         public void With_a_non_null_name_it_will_successfully_add_a_client_in_the_same_district()
         {
             siteEngineer.District = Districts.Instance.Sydney;
-            var clientA = siteEngineer.CreateClient("client A");
+            var clientA = siteEngineer.CreateClient("client A", null);
             Assert.IsNotNull(clientA);
             Assert.AreEqual(Districts.Instance.Sydney, clientA.District);
             CollectionAssert.Contains(Monitor.Instance.clients, clientA);
 
             siteEngineer.District = Districts.Instance.RuralIndonesia;
-            var clientB = siteEngineer.CreateClient("client B");
+            var clientB = siteEngineer.CreateClient("client B", null);
             Assert.IsNotNull(clientB);
             Assert.AreEqual(Districts.Instance.RuralIndonesia, clientB.District);
             CollectionAssert.Contains(Monitor.Instance.clients, clientB);
@@ -35,7 +35,7 @@ namespace InterventionMonitor.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void With_a_null_name_it_will_add_no_client()
         {
-            var client = siteEngineer.CreateClient(null);
+            var client = siteEngineer.CreateClient(null, null);
             Assert.IsNull(client);
             CollectionAssert.DoesNotContain(Monitor.Instance.clients, client);
         }

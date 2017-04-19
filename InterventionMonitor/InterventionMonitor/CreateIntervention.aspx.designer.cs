@@ -10,7 +10,7 @@
 namespace InterventionMonitor {
     
     
-    public partial class ViewClient {
+    public partial class CreateIntervention {
         
         /// <summary>
         /// lblName control.
@@ -29,6 +29,24 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtName;
+        
+        /// <summary>
+        /// lblDistrict control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDistrict;
+        
+        /// <summary>
+        /// ddlDistrict control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlTypes;
         
         /// <summary>
         /// lblAddress control.
@@ -67,30 +85,21 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.TextBox txtNotes;
         
         /// <summary>
-        /// lblInterventions control.
+        /// BtnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInterventions;
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
         
         /// <summary>
-        /// LbInterventions control.
+        /// lblErrorMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox LbInterventions;
-        
-        /// <summary>
-        /// BtnCreateIntervention control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCreateIntervention;
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
     }
 }

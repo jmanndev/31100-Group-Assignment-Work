@@ -15,7 +15,7 @@ namespace InterventionMonitor.Tests
         {
             siteEngineer = new SiteEngineer();
             siteEngineer.District = Districts.Instance.Sydney;
-            newestClient = siteEngineer.CreateClient("Josia");
+            newestClient = siteEngineer.CreateClient("Josia", null);
             newestClient.District = Districts.Instance.Sydney;
         }
 

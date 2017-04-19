@@ -54,20 +54,25 @@ namespace InterventionMonitor.Models
             SupplyMosquitoNet.MaterialCost = 100;
             SupplyMosquitoNet.LabourHours = 2;
 
-            SupplyandInstallPortableToilet = new InterventionType();
-            SupplyandInstallPortableToilet.Name = "Supply and Install Portable Toilet";
-            SupplyandInstallPortableToilet.MaterialCost = 1000;
-            SupplyandInstallPortableToilet.LabourHours = 10;
+            SupplyAndInstallPortableToilet = new InterventionType();
+            SupplyAndInstallPortableToilet.Name = "Supply and Install Portable Toilet";
+            SupplyAndInstallPortableToilet.MaterialCost = 1000;
+            SupplyAndInstallPortableToilet.LabourHours = 10;
 
             HepatitisAvoidanceTraining = new InterventionType();
             HepatitisAvoidanceTraining.Name = "Hepatitis Avoidance Training";
             HepatitisAvoidanceTraining.MaterialCost = 500;
             HepatitisAvoidanceTraining.LabourHours = 20;
 
-            SupplyandInstallStormproofHomeKit = new InterventionType();
-            SupplyandInstallStormproofHomeKit.Name = "Supply and Install Storm-proof HomeKit";
-            SupplyandInstallStormproofHomeKit.MaterialCost = 5000;
-            SupplyandInstallStormproofHomeKit.LabourHours = 20;
+            SupplyAndInstallStormproofHomeKit = new InterventionType();
+            SupplyAndInstallStormproofHomeKit.Name = "Supply and Install Storm-proof HomeKit";
+            SupplyAndInstallStormproofHomeKit.MaterialCost = 5000;
+            SupplyAndInstallStormproofHomeKit.LabourHours = 20;
+
+            AllTypes.Add(SupplyMosquitoNet);
+            AllTypes.Add(SupplyAndInstallPortableToilet);
+            AllTypes.Add(HepatitisAvoidanceTraining);
+            AllTypes.Add(SupplyAndInstallStormproofHomeKit);
         }
 
         private static readonly InterventionTypes _instance = new InterventionTypes();
@@ -79,9 +84,10 @@ namespace InterventionMonitor.Models
             }
         }
 
-        public InterventionType SupplyMosquitoNet;
-        public InterventionType SupplyandInstallPortableToilet;
-        public InterventionType HepatitisAvoidanceTraining;
-        public InterventionType SupplyandInstallStormproofHomeKit;
+        public readonly InterventionType SupplyMosquitoNet;
+        public readonly InterventionType SupplyAndInstallPortableToilet;
+        public readonly InterventionType HepatitisAvoidanceTraining;
+        public readonly InterventionType SupplyAndInstallStormproofHomeKit;
+        public readonly List<InterventionType> AllTypes = new List<InterventionType>();
     }
 }

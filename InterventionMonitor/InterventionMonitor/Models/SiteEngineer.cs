@@ -21,13 +21,14 @@ namespace InterventionMonitor.Models
 
         public Client CreateClient(string name, string address)
         {
-            if (name == null)
-                throw new ArgumentException("client should have name");
+            if (name == null && name.Equals(""))
+                throw new ArgumentException("Name is required", "name");
 
             var client = new Client();
             client.Name = name;
             client.Address = address;
             client.District = this.District;
+            client.ID = Monitor.Instance.clients.Count; // TODO: hack, get rid as DB will fix the unique ID issue
             Monitor.Instance.clients.Add(client);
 
             return client;
@@ -36,7 +37,7 @@ namespace InterventionMonitor.Models
         public Intervention CreateIntervention(Client client)
         {
             if (this.District != client.District)
-                throw new ArgumentException("engineer should be same district as client");
+                throw new ArgumentException("Engineer should be same district as the client");
 
             return new Intervention();
         }

@@ -38,5 +38,16 @@ namespace InterventionMonitor.Models
             get;
             set;
         }
+
+        public string DisplayValue
+        {
+            get
+            {
+                string result = string.Format("{0}: {1}", ID, Name);
+                if (Address.Equals(""))
+                    result = string.Format("{0} at {1}", result, Address);
+                return result;
+            }
+        }
     }
 }

@@ -40,8 +40,27 @@
     private set { _studentID = value; }
   }
   ```
-- Boolean class variables should be named with an `is` (or `are` for plurals) prefix,  e.g. `public bool isApproved` or `public bool areValidEntries`; 
+- Boolean class variables should be named with an `is` (or `are` for plurals) prefix,  e.g. `public bool isApproved` or `public bool areValidEntries`
 - Tab spaces. Use default VS2015 Community settings which seems to be Tab Size 4. Indent Size 4. Insert Spaces.
-- Individual tests are named as `[Unit]_[State]_[Result]`, e.g. `Dividing_FourByZero_Errors`
 ### Version Control ###
 - For each commit message, have it start with an active verb. E.g. `Update code standards on README file.`
+
+## Pages to Do ##
+See below for list of pages that are pending.  Please mark the progress on them as you work on it.
+
+|Screen|Status|Notes|
+|---|---|---|
+|Login|in progress||
+|Registration|in progress||
+|Main Page (page changes based on user role: site engineer, manager, accountant)|not impemented|assumes site engineer currently|
+|Report generation page|||
+|View list of all clients|implemented||
+|View/manage single client (with associated interventions) (could double as EDIT page)|in progress||
+|Create a client|implemented|functionality/verification needs to be completed|
+|View list of all interventions user is 'owner' of|||
+|View list of all interventions|implemented||
+|View list of all interventions filtered by status|||
+|View/manage single intervention (could double as EDIT page)|||
+|Create an intervention|||
+|List of managers|||
+|List of site Engineers|||
