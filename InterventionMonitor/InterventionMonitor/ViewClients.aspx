@@ -8,7 +8,7 @@
 
 
 
-        <asp:ListBox ID="ListBox1" runat="server" Height="249px" Width="400px"></asp:ListBox>
+        <asp:ListBox ID="LbClients" runat="server" Height="249px" Width="400px"></asp:ListBox>
         
 
 
@@ -16,12 +16,11 @@
 
         <br />
         <br />
-        <div ID="btnHolder" style="width:400px;">
-            <asp:Button ID="BtnCreate" runat="server" Text="New Client" style="float:right;" OnClick="BtnCreate_Click"/>
+        
+        <div id="btnHolder" style="width:400px;">
+            <asp:Button ID="BtnViewClient" runat="server" Text="View Client" style="float:right;" OnClick="BtnViewClient_Click"/>
+            <br style="clear:both;" />
+            <asp:Button ID="BtnCreateClient" runat="server" Text="New Client" style="float:right;" OnClick="BtnCreateClient_Click"/>
         </div>
-
-
-
-
     </div>
 </asp:Content>

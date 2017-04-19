@@ -29,6 +29,12 @@ namespace InterventionMonitor.Models
 
         private Districts()
         {
+            AllDistricts.Add(UrbanIndonesia);
+            AllDistricts.Add(RuralIndonesia);
+            AllDistricts.Add(UrbanPapuaNewGuinea);
+            AllDistricts.Add(RuralPapuaNewGuinea);
+            AllDistricts.Add(Sydney);
+            AllDistricts.Add(RuralNewSouthWales);
         }
 
         private static readonly Districts _instance = new Districts();
@@ -39,11 +45,12 @@ namespace InterventionMonitor.Models
                 return _instance;
             }
         }
-        public District UrbanIndonesia = new District() { Name = "Urban Indonesia" };
-        public District RuralIndonesia = new District() { Name = "Rural Indonesia" };
-        public District UrbanPapuaNewGuinea = new District() { Name = "Urban Papua New Guinea" };
-        public District RuralPapuaNewGuinea = new District() { Name = "Rural Papua New Guinea" };
-        public District Sydney = new District() { Name = "Sydney" };
-        public District RuralNewSouthWales = new District() { Name = "Rural New South Wales" };
+        public readonly District UrbanIndonesia = new District() { Name = "Urban Indonesia" };
+        public readonly District RuralIndonesia = new District() { Name = "Rural Indonesia" };
+        public readonly District UrbanPapuaNewGuinea = new District() { Name = "Urban Papua New Guinea" };
+        public readonly District RuralPapuaNewGuinea = new District() { Name = "Rural Papua New Guinea" };
+        public readonly District Sydney = new District() { Name = "Sydney" };
+        public readonly District RuralNewSouthWales = new District() { Name = "Rural New South Wales" };
+        public readonly List<District> AllDistricts = new List<District>();
     }
 }

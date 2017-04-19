@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Create Client" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateClient.aspx.cs" Inherits="InterventionMonitor.CreateClient" %>
+﻿<%@ Page Title="Create Intervention" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateIntervention.aspx.cs" Inherits="InterventionMonitor.CreateIntervention" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
@@ -10,6 +10,12 @@
         <asp:Label ID="lblName" runat="server" Text="Name" Width="100px"></asp:Label>
         <asp:TextBox ID="txtName" runat="server" Width="150px"></asp:TextBox>
         
+        <br />
+        <br />
+        
+        <asp:Label ID="lblDistrict" runat="server" Text="District" Width="100px"></asp:Label>
+        <asp:DropDownList ID="ddlDistrict" runat="server" Width="150px" >
+        </asp:DropDownList>
         <br />
         <br />
         

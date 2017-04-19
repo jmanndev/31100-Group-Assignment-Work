@@ -14,24 +14,15 @@ namespace InterventionMonitor
         {
             Monitor monitor = Monitor.Instance;
             SiteEngineer siteEngi = new SiteEngineer();
-
-            if (Monitor.Instance.districts.Count == 0)
-            {
-                //populating dummy data 
-                siteEngi.UserName = "Bob";
-                siteEngi.District = Districts.Instance.RuralNewSouthWales;
-                monitor.siteEngineers.Add(siteEngi);
-                monitor.districts.Add(Districts.Instance.RuralNewSouthWales);
-                monitor.districts.Add(Districts.Instance.UrbanIndonesia);
-                siteEngi.CreateClient("Troy", "Fake address");
-                InterventionType type = new InterventionType();
-                type.Name = "Mozzie net";
-                siteEngi.CreateIntervention(monitor.clients.Where(x => x.Name == "Troy").First(), type);
-            }
-            else
-            {
-
-            }
+            
+            //populating dummy data 
+            siteEngi.UserName = "Bob";
+            siteEngi.District = Districts.Instance.RuralNewSouthWales;
+            monitor.siteEngineers.Add(siteEngi);
+            siteEngi.CreateClient("Troy", "Fake address");
+            InterventionType type = new InterventionType();
+            type.Name = "Mozzie net";
+            siteEngi.CreateIntervention(monitor.clients.Where(x => x.Name == "Troy").First(), type);
         }
 
         protected void BtnMyClients_Click(object sender, EventArgs e)

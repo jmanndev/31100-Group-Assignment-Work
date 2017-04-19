@@ -12,14 +12,17 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            ListBox1.DataSource = Monitor.Instance.clients;
-            ListBox1.DataTextField = "Name";
-            ListBox1.DataBind();
-
+            LbClients.DataSource = Monitor.Instance.clients;
+            LbClients.DataTextField = "DisplayValue";
+            LbClients.DataBind();
         }
 
-        protected void BtnCreate_Click(object sender, EventArgs e)
+        protected void BtnViewClient_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ViewClient.aspx");
+        }
+
+        protected void BtnCreateClient_Click(object sender, EventArgs e)
         {
             Response.Redirect("CreateClient.aspx");
         }

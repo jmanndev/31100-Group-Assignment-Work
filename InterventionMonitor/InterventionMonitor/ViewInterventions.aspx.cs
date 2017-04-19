@@ -16,5 +16,9 @@ namespace InterventionMonitor
             LbInterventions.DataTextField = "DisplayValue";
             LbInterventions.DataBind();
         }
+        
+        protected void BtnView_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

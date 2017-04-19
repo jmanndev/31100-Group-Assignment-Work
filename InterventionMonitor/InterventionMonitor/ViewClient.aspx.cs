@@ -13,5 +13,10 @@ namespace InterventionMonitor
         {
 
         }
+
+        protected void BtnCreateIntervention_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateIntervention.aspx");
+        }
     }
 }

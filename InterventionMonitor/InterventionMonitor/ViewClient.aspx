@@ -11,7 +11,7 @@
 
         <br /><br />
 
-        <asp:Label ID="lblAddress" runat="server" Text="Name" Width="100px"></asp:Label>
+        <asp:Label ID="lblAddress" runat="server" Text="Address" Width="100px"></asp:Label>
         <asp:TextBox ID="txtAddress" runat="server" Width="150px"></asp:TextBox>
 
         <br /><br />
@@ -23,6 +23,11 @@
         
         <asp:Label ID="lblInterventions" runat="server" Text="Interventions" Width="100px"></asp:Label> <br />
         <asp:ListBox ID="LbInterventions" runat="server" Width="400px"></asp:ListBox>
+
+        
+        <div ID="btnHolder" style="width:400px;">
+            <asp:Button ID="BtnCreateIntervention" runat="server" Text="New Intervention" style="float:right;" OnClick="BtnCreateIntervention_Click"/>
+        </div>
 
     </div>
 </asp:Content>

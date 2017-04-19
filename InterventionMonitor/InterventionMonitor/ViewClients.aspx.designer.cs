@@ -13,21 +13,30 @@ namespace InterventionMonitor {
     public partial class ViewClients {
         
         /// <summary>
-        /// ListBox1 control.
+        /// LbClients control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.ListBox LbClients;
         
         /// <summary>
-        /// BtnCreate control.
+        /// BtnViewClient control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCreate;
+        protected global::System.Web.UI.WebControls.Button BtnViewClient;
+        
+        /// <summary>
+        /// BtnCreateClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnCreateClient;
     }
 }
