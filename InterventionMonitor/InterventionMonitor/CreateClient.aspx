@@ -8,16 +8,12 @@
         <br />
         
         <asp:Label ID="lblName" runat="server" Text="Name" Width="100px"></asp:Label>
-       
-        
         <asp:TextBox ID="txtName" runat="server" Width="150px"></asp:TextBox>
         
         <br />
         <br />
         
         <asp:Label ID="lblDistrict" runat="server" Text="District" Width="100px"></asp:Label>
-        
-        
         <asp:DropDownList ID="ddlDistrict" runat="server" Width="150px" >
         </asp:DropDownList>
         <br />
