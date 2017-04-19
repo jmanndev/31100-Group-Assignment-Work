@@ -13,11 +13,6 @@
         <br />
         <br />
         
-        <asp:Label ID="lblDistrict" runat="server" Text="District" Width="100px"></asp:Label>
-        <asp:DropDownList ID="ddlDistrict" runat="server" Width="150px" >
-        </asp:DropDownList>
-        <br />
-        <br />
         
         <asp:Label ID="lblAddress" runat="server" Text="Address" Width="100px"></asp:Label>
         
@@ -36,7 +31,7 @@
         <br />
 
         <div ID= "holders" style="width:463px;">
-        <asp:Button ID="BtnSubmit" runat="server" Text="Submit" style="float: right;" OnClick="Button1_Click"></asp:Button>
+        <asp:Button ID="BtnSubmit" runat="server" Text="Submit" style="float: right;" OnClick="SubmitButton_Click"></asp:Button>
         </div>
 
         <asp:Label ID ="lblErrorMessage" runat="server" Width="250px" ForeColor="Red" Font-Bold="true"></asp:Label>

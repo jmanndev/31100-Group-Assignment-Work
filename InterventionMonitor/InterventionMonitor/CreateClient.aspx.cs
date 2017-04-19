@@ -13,13 +13,15 @@ namespace InterventionMonitor
        
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            ddlDistrict.DataSource = Monitor.Instance.districts;
-            ddlDistrict.DataTextField = "Name";
-            ddlDistrict.DataBind();
+            
         }
         
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+            SubmitCreateClientForm();
+        }
+
+        private void SubmitCreateClientForm()
         {
             bool allFieldsPopulated = true; //make this variable name better...
             string errorMessage = "";
@@ -27,9 +29,16 @@ namespace InterventionMonitor
             if (txtName.Text.ToString().Equals(""))
             {
                 allFieldsPopulated = false;
-                errorMessage += "** Name is required.\n\n";
+                lblName.Font.Bold = true;
+                errorMessage += "** Name is required.<br/>";
             }
-            
+            if (txtAddress.Text.ToString().Equals(""))
+            {
+                allFieldsPopulated = false;
+                lblAddress.Font.Bold = true;
+                errorMessage += "** Address is required.<br/>";
+            }
+
             if (allFieldsPopulated)
             {
                 Monitor.Instance.siteEngineers.First().CreateClient(txtName.Text, txtAddress.Text);
@@ -39,6 +48,7 @@ namespace InterventionMonitor
             {
                 lblErrorMessage.Text = errorMessage;
             }
+
         }
     }
 }
