@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Create Client" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateClient.aspx.cs" Inherits="InterventionMonitor.CreateClient" %>
+﻿<%@ Page Title="Create Client" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="CreateClient.aspx.cs" Inherits="InterventionMonitor.CreateClient" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
