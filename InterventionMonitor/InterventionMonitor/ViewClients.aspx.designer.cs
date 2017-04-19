@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterventionMonitor {
-    
-    
-    public partial class ViewClients {
-        
+namespace InterventionMonitor
+{
+
+
+    public partial class ViewClients
+    {
+
         /// <summary>
         /// LbClients control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox LbClients;
-        
+
         /// <summary>
         /// BtnViewClient control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnViewClient;
-        
+
         /// <summary>
         /// BtnCreateClient control.
         /// </summary>

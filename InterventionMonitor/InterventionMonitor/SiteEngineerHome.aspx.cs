@@ -14,7 +14,7 @@ namespace InterventionMonitor
         {
             Monitor monitor = Monitor.Instance;
             SiteEngineer siteEngi = new SiteEngineer();
-            
+
             //populating dummy data 
             siteEngi.UserName = "Bob";
             siteEngi.District = Districts.Instance.RuralNewSouthWales;

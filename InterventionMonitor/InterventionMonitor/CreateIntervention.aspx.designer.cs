@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterventionMonitor {
-    
-    
-    public partial class CreateIntervention {
-        
+namespace InterventionMonitor
+{
+
+
+    public partial class CreateIntervention
+    {
+
         /// <summary>
         /// lblName control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblName;
-        
+
         /// <summary>
         /// txtName control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtName;
-        
+
         /// <summary>
         /// lblDistrict control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDistrict;
-        
+
         /// <summary>
         /// ddlDistrict control.
         /// </summary>
@@ -46,8 +48,8 @@ namespace InterventionMonitor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTypes;
-        
+        protected global::System.Web.UI.WebControls.DropDownList ddlDistrict;
+
         /// <summary>
         /// lblAddress control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAddress;
-        
+
         /// <summary>
         /// txtAddress control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
-        
+
         /// <summary>
         /// lblNotes control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNotes;
-        
+
         /// <summary>
         /// txtNotes control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNotes;
-        
+
         /// <summary>
         /// BtnSubmit control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnSubmit;
-        
+
         /// <summary>
         /// lblErrorMessage control.
         /// </summary>
