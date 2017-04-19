@@ -48,17 +48,19 @@
 ### Pages to Do ##
 See below for list of pages that are pending.  Please mark the progress on them as you work on it.
 
-- Login
-- Registration
-- Main Page (page changes based on user role: site engineer, manager, accountant)
-- Report generation page
-- View list of all clients
-- View/manage single client (with associated interventions) (could double as EDIT page)
-- Create a client
-- View list of all interventions user is 'owner' of
-- View list of all proposed interventions
-- View list of all actioned interventions
-- View/manage single intervention (could double as EDIT page)
-- Create an intervention
-- List of managers
-- List of site Engineers
+|Screen|Status|Notes|
+|---|---|---|
+|Login|in progress||
+|Registration|in progress||
+|Main Page (page changes based on user role: site engineer, manager, accountant)|not impemented|assumes site engineer currently|
+|Report generation page|||
+|View list of all clients|implemented||
+|View/manage single client (with associated interventions) (could double as EDIT page)|in progress||
+|Create a client|implemented|functionality/verification needs to be completed|
+|View list of all interventions user is 'owner' of|||
+|View list of all interventions|implemented||
+|View list of all interventions filtered by status|||
+|View/manage single intervention (could double as EDIT page)|||
+|Create an intervention|||
+|List of managers|||
+|List of site Engineers|||
