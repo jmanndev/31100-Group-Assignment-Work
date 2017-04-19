@@ -5,11 +5,11 @@
     <div id="body-content" style="height: 308px">
 
 
-        
+
         <asp:ListBox ID="LbInterventions" runat="server" Height="249px" Width="400px"></asp:ListBox>
 
-        <div ID="btnHolder" style="width:400px;">
-            <asp:Button ID="BtnCreate" runat="server" Text="View Intervention" style="float:right;" OnClick="BtnView_Click"/>
+        <div id="btnHolder" style="width: 400px;">
+            <asp:Button ID="BtnCreate" runat="server" Text="View Intervention" Style="float: right;" OnClick="BtnView_Click" />
         </div>
     </div>
 </asp:Content>

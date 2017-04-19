@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterventionMonitor {
-    
-    
-    public partial class ViewInterventions {
-        
+namespace InterventionMonitor
+{
+
+
+    public partial class ViewInterventions
+    {
+
         /// <summary>
         /// LbInterventions control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox LbInterventions;
-        
+
         /// <summary>
         /// BtnCreate control.
         /// </summary>

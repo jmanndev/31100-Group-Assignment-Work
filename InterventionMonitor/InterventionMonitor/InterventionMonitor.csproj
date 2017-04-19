@@ -398,6 +398,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CreateClient.aspx.designer.cs">
+      <DependentUpon>CreateClient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateIntervention.aspx.cs">
       <DependentUpon>CreateIntervention.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -459,9 +462,6 @@
     <Compile Include="CreateClient.aspx.cs">
       <DependentUpon>CreateClient.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CreateClient.aspx.designer.cs">
-      <DependentUpon>CreateClient.aspx</DependentUpon>
     </Compile>
     <Compile Include="SiteEngineerHome.aspx.cs">
       <DependentUpon>SiteEngineerHome.aspx</DependentUpon>

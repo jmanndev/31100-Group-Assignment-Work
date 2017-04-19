@@ -10,12 +10,12 @@ namespace InterventionMonitor
 {
     public partial class CreateIntervention : System.Web.UI.Page
     {
-       
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddlTypes.DataSource = InterventionTypes.Instance.AllTypes;
+         /*   ddlTypes.DataSource = InterventionTypes.Instance.AllTypes;
             ddlTypes.DataTextField = "Name";
-            ddlTypes.DataBind();
+            ddlTypes.DataBind(); */
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace InterventionMonitor
             //    allFieldsPopulated = false;
             //    errorMessage += "** Name is required.\n\n";
             //}
-            
+
             //if (allFieldsPopulated)
             //{
             //    Monitor.Instance.siteEngineers.First().CreateClient(txtName.Text, txtAddress.Text);
