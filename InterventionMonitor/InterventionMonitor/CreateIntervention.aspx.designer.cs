@@ -31,16 +31,16 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// lblDistrict control.
+        /// lblTypes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDistrict;
+        protected global::System.Web.UI.WebControls.Label lblTypes;
         
         /// <summary>
-        /// ddlDistrict control.
+        /// ddlTypes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

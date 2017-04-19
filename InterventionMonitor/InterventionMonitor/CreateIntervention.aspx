@@ -13,8 +13,8 @@
         <br />
         <br />
         
-        <asp:Label ID="lblDistrict" runat="server" Text="District" Width="100px"></asp:Label>
-        <asp:DropDownList ID="ddlDistrict" runat="server" Width="150px" >
+        <asp:Label ID="lblTypes" runat="server" Text="Type" Width="100px"></asp:Label>
+        <asp:DropDownList ID="ddlTypes" runat="server" Width="150px" >
         </asp:DropDownList>
         <br />
         <br />
