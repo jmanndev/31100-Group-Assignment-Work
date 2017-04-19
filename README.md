@@ -52,15 +52,15 @@ See below for list of pages that are pending.  Please mark the progress on them 
 |---|---|---|
 |Login|in progress||
 |Registration|in progress||
-|Main Page (page changes based on user role: site engineer, manager, accountant)|not impemented|assumes site engineer currently|
-|Report generation page|||
-|View list of all clients|implemented||
-|View/manage single client (with associated interventions) (could double as EDIT page)|in progress|displays dummy data, needs to implement db connection|
+|Main Page (page changes based on user role: site engineer, manager, accountant)|files exist|assumes site engineer currently|
 |Create a client|implemented|could implement some form of data validation other than not null, otherwise completed|
-|View list of all interventions user is 'owner' of|||
-|View list of all interventions|implemented||
-|View list of all interventions filtered by status|||
+|View/manage single client (with associated interventions) (could double as EDIT page)|in progress|displays dummy data, needs to implement db connection|
+|View list of all clients|implemented||
+|Create an intervention|files exist||
 |View/manage single intervention (could double as EDIT page)|||
-|Create an intervention|||
+|View list of all interventions|implemented||
+|View list of all interventions user is 'owner' of|||
+|View list of all interventions filtered by status|||
 |List of managers|||
-|List of site Engineers|||
+|List of site engineers|||
+|Report generation page|||
