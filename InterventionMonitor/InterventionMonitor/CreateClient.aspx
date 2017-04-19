@@ -43,5 +43,7 @@
         <asp:Button ID="BtnSubmit" runat="server" Text="Submit" style="float: right;" OnClick="Button1_Click"></asp:Button>
         </div>
 
+        <asp:Label ID ="lblErrorMessage" runat="server" Width="250px" ForeColor="Red" Font-Bold="true"></asp:Label>
+
     </div>
 </asp:Content>

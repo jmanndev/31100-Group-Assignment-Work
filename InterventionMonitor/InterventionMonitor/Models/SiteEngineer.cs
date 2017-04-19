@@ -19,13 +19,14 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        public Client CreateClient(string name)
+        public Client CreateClient(string name, string address)
         {
             if (name == null)
                 throw new ArgumentException("client should have name");
 
             var client = new Client();
             client.Name = name;
+            client.Address = address;
             client.District = this.District;
             Monitor.Instance.clients.Add(client);
 
