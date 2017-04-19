@@ -7,47 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterventionMonitor
-{
-
-
-    public partial class SiteEngineerHome
-    {
-
+namespace InterventionMonitor {
+    
+    
+    public partial class CreateClient {
+        
         /// <summary>
-        /// BtnChangeDetails control.
+        /// lblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnChangeDetails;
-
+        protected global::System.Web.UI.WebControls.Label lblName;
+        
         /// <summary>
-        /// BtnMyClients control.
+        /// txtName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnMyClients;
-
+        protected global::System.Web.UI.WebControls.TextBox txtName;
+        
         /// <summary>
-        /// BtnMyInterventions control.
+        /// lblAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnMyInterventions;
-
+        protected global::System.Web.UI.WebControls.Label lblAddress;
+        
         /// <summary>
-        /// BtnCreateClient control.
+        /// txtAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCreateClient;
+        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        
+        /// <summary>
+        /// lblNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNotes;
+        
+        /// <summary>
+        /// txtNotes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNotes;
+        
+        /// <summary>
+        /// BtnSubmit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
+        
+        /// <summary>
+        /// lblErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblErrorMessage;
     }
 }

@@ -1,9 +1,10 @@
-﻿<%@ Page Title="Create Intervention" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateIntervention.aspx.cs" Inherits="InterventionMonitor.CreateIntervention" %>
+﻿<%@ Page Title="Create Intervention" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="True" CodeBehind="CreateIntervention.aspx.cs" Inherits="InterventionMonitor.CreateIntervention" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
     <div id="body-content" style="height: 308px">
 
+        <!-- REPLACE ALL OF THE BELOW WITH RELEVENT FORMS FOR INTERVENTIONS.  WAS COPIED FROM CLIENTS PAGE -->
 
         <br />
 

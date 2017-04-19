@@ -13,9 +13,9 @@ namespace InterventionMonitor
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            ddlTypes.DataSource = InterventionTypes.Instance.AllTypes;
+         /*   ddlTypes.DataSource = InterventionTypes.Instance.AllTypes;
             ddlTypes.DataTextField = "Name";
-            ddlTypes.DataBind();
+            ddlTypes.DataBind(); */
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
