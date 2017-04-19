@@ -55,8 +55,8 @@ See below for list of pages that are pending.  Please mark the progress on them 
 |Main Page (page changes based on user role: site engineer, manager, accountant)|not impemented|assumes site engineer currently|
 |Report generation page|||
 |View list of all clients|implemented||
-|View/manage single client (with associated interventions) (could double as EDIT page)|in progress||
-|Create a client|implemented|could implement REGEX formatting, otherwise completed|
+|View/manage single client (with associated interventions) (could double as EDIT page)|in progress|displays dummy data, needs to implement db connection|
+|Create a client|implemented|could implement some form of data validation other than not null, otherwise completed|
 |View list of all interventions user is 'owner' of|||
 |View list of all interventions|implemented||
 |View list of all interventions filtered by status|||
