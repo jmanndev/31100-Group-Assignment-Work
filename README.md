@@ -5,6 +5,26 @@
 * Wen Yen George Du (11747969)
 * Jordan Labonne (12002491)
 
+## Pages to Do ##
+See below for list of pages that are pending.  Please mark the progress on them as you work on it.
+
+|Screen|Status|Notes|
+|---|---|---|
+|Login|in progress||
+|Registration|in progress||
+|Main Page (page changes based on user role: site engineer, manager, accountant)|files exist|assumes site engineer currently|
+|Create a client|implemented|could implement some form of data validation other than not null, otherwise completed|
+|View/manage single client (with associated interventions) (could double as EDIT page)|in progress|displays dummy data, needs to implement db connection|
+|View list of all clients|implemented||
+|Create an intervention|files exist||
+|View/manage single intervention (could double as EDIT page)|||
+|View list of all interventions|implemented||
+|View list of all interventions user is 'owner' of|||
+|View list of all interventions filtered by status|||
+|List of managers|||
+|List of site engineers|||
+|Report generation page|||
+
 ## Code Standards ##
 ### Project ###
 - Backing fields (AKA class variables) that are used in calculated Properties should have an underscore prefix so we know which class variable has a Property that we should be using instead. Especially when displaying the Property to the user.
@@ -44,23 +64,3 @@
 - Tab spaces. Use default VS2015 Community settings which seems to be Tab Size 4. Indent Size 4. Insert Spaces.
 ### Version Control ###
 - For each commit message, have it start with an active verb. E.g. `Update code standards on README file.`
-
-## Pages to Do ##
-See below for list of pages that are pending.  Please mark the progress on them as you work on it.
-
-|Screen|Status|Notes|
-|---|---|---|
-|Login|in progress||
-|Registration|in progress||
-|Main Page (page changes based on user role: site engineer, manager, accountant)|files exist|assumes site engineer currently|
-|Create a client|implemented|could implement some form of data validation other than not null, otherwise completed|
-|View/manage single client (with associated interventions) (could double as EDIT page)|in progress|displays dummy data, needs to implement db connection|
-|View list of all clients|implemented||
-|Create an intervention|files exist||
-|View/manage single intervention (could double as EDIT page)|||
-|View list of all interventions|implemented||
-|View list of all interventions user is 'owner' of|||
-|View list of all interventions filtered by status|||
-|List of managers|||
-|List of site engineers|||
-|Report generation page|||
