@@ -56,7 +56,7 @@ See below for list of pages that are pending.  Please mark the progress on them 
 |Report generation page|||
 |View list of all clients|implemented||
 |View/manage single client (with associated interventions) (could double as EDIT page)|in progress||
-|Create a client|implemented|functionality/verification needs to be completed|
+|Create a client|implemented|could implement REGEX formatting, otherwise completed|
 |View list of all interventions user is 'owner' of|||
 |View list of all interventions|implemented||
 |View list of all interventions filtered by status|||
