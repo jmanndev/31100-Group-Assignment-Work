@@ -45,7 +45,7 @@
 ### Version Control ###
 - For each commit message, have it start with an active verb. E.g. `Update code standards on README file.`
 
-### Pages to Do ##
+## Pages to Do ##
 See below for list of pages that are pending.  Please mark the progress on them as you work on it.
 
 |Screen|Status|Notes|
