@@ -17,7 +17,6 @@ namespace InterventionMonitor.Tests
             intervention = new Intervention();
         }
 
-
         [TestMethod]
         public void As_an_engineer_the_behaviour_should_be_inherited()
         {
@@ -28,8 +27,8 @@ namespace InterventionMonitor.Tests
         [TestMethod]
         public void As_a_manager_the_behaviour_should_be_inherited()
         {
-            SiteEngineer engineer = new SiteEngineer();
-            Assert.IsInstanceOfType(engineer, typeof(Approver));
+            Manager manager = new Manager();
+            Assert.IsInstanceOfType(manager, typeof(Approver));
         }
 
         [TestMethod]

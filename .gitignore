@@ -6,3 +6,7 @@ InterventionMonitor/InterventionMonitor.Tests/bin/*
 
 # Don't add SUO files as they differ per user.
 *.suo
+# Avoid web.config always changing at each different dev's change: http://stackoverflow.com/a/18344611/1007496
+InterventionMonitor/InterventionMonitor/connectionstrings.config
+# Avoid applicationhost.config always changing at each different dev's change: http://stackoverflow.com/a/30884640/1007496
+InterventionMonitor/.vs/config/applicationhost.config

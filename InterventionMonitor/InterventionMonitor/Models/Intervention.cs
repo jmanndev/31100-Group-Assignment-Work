@@ -77,7 +77,7 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        public ApplicationUser ApprovedBy
+        public Approver ApprovedBy
         {
             get;
             set;
@@ -103,7 +103,7 @@ namespace InterventionMonitor.Models
         /*
          * @param approver - should eventually be restricted to user types who are allowed to approve interventions.
          * */
-        public void IsMarkedAsApproved(ApplicationUser approver)
+        public void IsMarkedAsApproved(Approver approver)
         {
             if (Status == InterventionStatuses.Instance.Proposed)
             {
