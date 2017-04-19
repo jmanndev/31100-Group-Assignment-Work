@@ -18,12 +18,27 @@ namespace InterventionMonitor
             ddlDistrict.DataTextField = "Name";
             ddlDistrict.DataBind();
         }
-
+        
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //badly coded just for demo purpose
-            Monitor.Instance.siteEngineers.First().CreateClient(txtName.Text);
-            Response.Redirect("ViewClients.aspx");
+            bool allFieldsPopulated = true; //make this variable name better...
+            string errorMessage = "";
+
+            if (txtName.Text.ToString().Equals(""))
+            {
+                allFieldsPopulated = false;
+                errorMessage += "** Name is required.\n\n";
+            }
+            
+            if (allFieldsPopulated)
+            {
+                Monitor.Instance.siteEngineers.First().CreateClient(txtName.Text, txtAddress.Text);
+                Response.Redirect("ViewClients.aspx");
+            }
+            else
+            {
+                lblErrorMessage.Text = errorMessage;
+            }
         }
     }
 }

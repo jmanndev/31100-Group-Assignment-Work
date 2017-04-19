@@ -23,7 +23,7 @@ namespace InterventionMonitor
                 monitor.siteEngineers.Add(siteEngi);
                 monitor.districts.Add(Districts.Instance.RuralNewSouthWales);
                 monitor.districts.Add(Districts.Instance.UrbanIndonesia);
-                siteEngi.CreateClient("Troy");
+                siteEngi.CreateClient("Troy", "Fake address");
                 InterventionType type = new InterventionType();
                 type.Name = "Mozzie net";
                 siteEngi.CreateIntervention(monitor.clients.Where(x => x.Name == "Troy").First(), type);
