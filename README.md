@@ -27,11 +27,11 @@ See below for list of pages that are pending.  Please mark the progress on them 
 
 ## To run project ##
 ### update `IIS\config\applicationhost.config` ###
-The project is now reading the `IIS\config\applicationhost.config` file instead of the `applicationhost.config` file found in our project as we all have different physical paths to our copy of the project. `.gitignore` has been updated to ignore redundant changes made to our project's `applicationhost.config` file and it won't be in Github's repo.
+The project is now reading the `IIS\config\applicationhost.config` file instead of the `applicationhost.config` file that used to be in our repo because we all have different physical paths to our copy of the project.
 
 Steps to update your IIS's `applicationhost.config`
 1. Open `applicationhost.config` for EDITING that's in `%userprofile%\documents\iisexpress\config\`, e.g. `C:\Users\knockycode\documents\iisexpress\config\`
-2. Open `applicationhost.config` for VIEW that's in `\31100-Group-Assignment-Work\InterventionMonitor\.vs\` and look for code that looks like below
+2. Open a `applicationhost.config` that has your physical path ([George's](https://github.com/jmanndev/31100-Group-Assignment-Work/blob/fa0885539c0c2aaff2eb72be12e4fc81d84789a8/InterventionMonitor/.vs/config/applicationhost.config), [Jordan's](https://github.com/jmanndev/31100-Group-Assignment-Work/blob/ef2a2927aacf72079bc380b730c5cde0ee550783/InterventionMonitor/.vs/config/applicationhost.config)) and look for code that looks like below
 ```xml
 <site name="InterventionMonitor" id="2">
     <application path="/" applicationPool="Clr4IntegratedAppPool">
