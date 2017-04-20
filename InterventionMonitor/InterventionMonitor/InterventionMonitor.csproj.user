@@ -3,6 +3,7 @@
   <PropertyGroup>
     <UseIISExpress>true</UseIISExpress>
     <ProjectView>ShowAllFiles</ProjectView>
+    <UseGlobalApplicationHostFile>true</UseGlobalApplicationHostFile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>
