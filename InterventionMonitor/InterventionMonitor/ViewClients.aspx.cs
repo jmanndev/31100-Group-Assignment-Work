@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InterventionMonitor.Models;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace InterventionMonitor
 {
@@ -12,9 +14,22 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LbClients.DataSource = Monitor.Instance.clients;
-            LbClients.DataTextField = "DisplayValue";
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataConnection"].ToString());
+            string queryString = "Select * From Client";
+            SqlCommand comm = new SqlCommand(queryString, connection);
+            connection.Open();
+            SqlDataReader reader = comm.ExecuteReader();
+
+            LbClients.DataSource = reader;
+            LbClients.DataTextField = "Name";
+            LbClients.DataValueField = "ID";
             LbClients.DataBind();
+
+            connection.Close();
+
+            //LbClients.DataSource = Monitor.Instance.clients;
+            //LbClients.DataTextField = "DisplayValue";
+            //LbClients.DataBind();
         }
 
         protected void BtnViewClient_Click(object sender, EventArgs e)
