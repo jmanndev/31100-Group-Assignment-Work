@@ -69,7 +69,10 @@ namespace InterventionMonitor
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.User.IsInRole("Accountant"))
+            {
+                menuAccountant.Visible = false;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
