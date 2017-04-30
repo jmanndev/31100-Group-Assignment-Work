@@ -15,28 +15,31 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
-            SqlConnection connection = DatabaseConnections.DataConnection;         
-            string queryString = "Select * From Client";
-            SqlCommand comm = new SqlCommand(queryString, connection);
-            connection.Open();
-            SqlDataReader reader = comm.ExecuteReader();
+                SqlConnection connection = DatabaseConnections.DataConnection;
+                string queryString = "Select * From Client";
+                SqlCommand comm = new SqlCommand(queryString, connection);
+                connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
 
-            LbClients.DataSource = reader;
-            LbClients.DataTextField = "Name";
-            LbClients.DataValueField = "ID";
-            LbClients.DataBind();
+                LbClients.DataSource = reader;
+                LbClients.DataTextField = "Name";
+                LbClients.DataValueField = "ID";
+                LbClients.DataBind();
 
-            connection.Close();
-
-            //LbClients.DataSource = Monitor.Instance.clients;
-            //LbClients.DataTextField = "DisplayValue";
-            //LbClients.DataBind();
+                connection.Close();
+            }
         }
 
         protected void BtnViewClient_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ViewClient.aspx");
+            if (LbClients.SelectedItem != null)
+            {
+                Session["ClientID"] = LbClients.SelectedItem.Value;
+                Response.Redirect("ViewClient.aspx");
+            }
         }
 
         protected void BtnCreateClient_Click(object sender, EventArgs e)
