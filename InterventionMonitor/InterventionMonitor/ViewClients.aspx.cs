@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using InterventionMonitor.Models;
 using System.Data.SqlClient;
 using System.Configuration;
+using InterventionMonitor.DataAccess;
 
 namespace InterventionMonitor
 {
@@ -14,7 +15,8 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataConnection"].ToString());
+
+            SqlConnection connection = DatabaseConnections.DataConnection;         
             string queryString = "Select * From Client";
             SqlCommand comm = new SqlCommand(queryString, connection);
             connection.Open();

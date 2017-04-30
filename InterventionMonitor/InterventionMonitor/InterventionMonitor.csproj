@@ -414,6 +414,7 @@
     <Compile Include="CreateIntervention.aspx.designer.cs">
       <DependentUpon>CreateIntervention.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\DatabaseConnections.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
