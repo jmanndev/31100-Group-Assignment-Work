@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterventionMonitor
-{
-
-
-    public partial class LoginPage
-    {
-
+namespace InterventionMonitor {
+    
+    
+    public partial class LoginPage {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -21,53 +19,53 @@ namespace InterventionMonitor
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        protected global::System.Web.UI.HtmlControls.HtmlForm formLogin;
+        
         /// <summary>
-        /// Panel2 control.
+        /// PanelOuter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
-
+        protected global::System.Web.UI.WebControls.Panel PanelOuter;
+        
         /// <summary>
-        /// Label4 control.
+        /// lblEcare control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
+        protected global::System.Web.UI.WebControls.Label lblEcare;
+        
         /// <summary>
-        /// Panel1 control.
+        /// PanelInner control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-
+        protected global::System.Web.UI.WebControls.Panel PanelInner;
+        
         /// <summary>
-        /// Label3 control.
+        /// lblInstructions control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-
+        protected global::System.Web.UI.WebControls.Label lblInstructions;
+        
         /// <summary>
-        /// Label1 control.
+        /// lblUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
+        protected global::System.Web.UI.WebControls.Label lblUsername;
+        
         /// <summary>
         /// txtUsername control.
         /// </summary>
@@ -76,16 +74,16 @@ namespace InterventionMonitor
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtUsername;
-
+        
         /// <summary>
-        /// Label2 control.
+        /// lblPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
+        protected global::System.Web.UI.WebControls.Label lblPassword;
+        
         /// <summary>
         /// txtPassword control.
         /// </summary>
@@ -94,14 +92,14 @@ namespace InterventionMonitor
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPassword;
-
+        
         /// <summary>
-        /// Button1 control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnLogin;
     }
 }

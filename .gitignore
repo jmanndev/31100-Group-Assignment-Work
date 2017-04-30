@@ -10,3 +10,6 @@ InterventionMonitor/InterventionMonitor.Tests/bin/*
 InterventionMonitor/InterventionMonitor/connectionstrings.config
 # Avoid applicationhost.config always changing at each different dev's change: http://stackoverflow.com/a/30884640/1007496
 InterventionMonitor/.vs/config/applicationhost.config
+
+# Don't add App_Data files as we shall be adding scripts to make the databases
+InterventionMonitor/InterventionMonitor/App_Data/*
