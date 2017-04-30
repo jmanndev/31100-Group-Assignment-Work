@@ -8,7 +8,7 @@
 
 
 
-        <asp:ListBox ID="LbClients" runat="server" Height="249px" Width="400px"></asp:ListBox>
+        <asp:ListBox ID="LbClients" runat="server" Height="249px" Width="400px" OnSelectedIndexChanged="LbClients_SelectedIndexChanged"></asp:ListBox>
 
 
 

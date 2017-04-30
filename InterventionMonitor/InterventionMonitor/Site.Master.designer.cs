@@ -7,13 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterventionMonitor
-{
-
-
-    public partial class SiteMaster
-    {
-
+namespace InterventionMonitor {
+    
+    
+    public partial class SiteMaster {
+        
+        /// <summary>
+        /// menuAccountant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuAccountant;
+        
         /// <summary>
         /// MainContent control.
         /// </summary>

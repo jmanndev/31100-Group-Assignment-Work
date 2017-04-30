@@ -1,5 +1,7 @@
-﻿using System;
+﻿using InterventionMonitor.DataAccess;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -23,13 +25,10 @@ namespace InterventionMonitor.Models
         {
             if (name == null && name.Equals(""))
                 throw new ArgumentException("Name is required", "name");
-
-            var client = new Client();
-            client.Name = name;
-            client.Address = address;
-            client.District = this.District;
-            client.ID = Monitor.Instance.clients.Count; // TODO: hack, get rid as DB will fix the unique ID issue
-            Monitor.Instance.clients.Add(client);
+            var client = new Client(name, address, this.District);
+            
+            //client.ID = Monitor.Instance.clients.Count; // TODO: hack, get rid as DB will fix the unique ID issue
+            //Monitor.Instance.clients.Add(client);
 
             return client;
         }

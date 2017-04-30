@@ -7,6 +7,11 @@ namespace InterventionMonitor.Models
 {
     public class District
     {
+        public int ID
+        {
+            get;
+        }
+
         public string Name
         {
             get;
