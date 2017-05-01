@@ -1,6 +1,8 @@
-﻿using System;
+﻿using InterventionMonitor.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -48,6 +50,23 @@ namespace InterventionMonitor.Models
                     result = string.Format("{0} at {1}", result, Address);
                 return result;
             }
+        }
+
+        public Client(string name, string address, District district)
+        {
+            Name = name;
+            Address = address;
+            District = district;
+
+            SqlConnection connection = DatabaseConnections.DataConnection;
+            string query = "INSERT INTO Client (Name, DistrictID, Address) VALUES (@Name, @DistrictID, @Address)";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@Name", Name);
+            cmd.Parameters.AddWithValue("@DistrictID", District.ID);
+            cmd.Parameters.AddWithValue("@Address", Address);
+            connection.Open();
+            SqlDataReader reader = cmd.ExecuteReader();     
+            connection.Close();
         }
     }
 }
