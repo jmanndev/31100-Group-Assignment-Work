@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="MonitorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_a_engineer_creates_a_complete_intervention.cs" />
     <Compile Include="When_a_approver_approves_an_intervention.cs" />
     <Compile Include="When_a_engineer_creates_an_intervention.cs" />
     <Compile Include="When_a_engineer_creates_an_intervention_for_a_client_in_same_district.cs" />

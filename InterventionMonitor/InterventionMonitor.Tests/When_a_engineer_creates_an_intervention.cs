@@ -40,5 +40,30 @@ namespace InterventionMonitor.Tests
             Assert.IsNotNull(interventionCreated);
             CollectionAssert.DoesNotContain(Monitor.Instance.interventions, interventionCreated);
         }
+
+        [TestMethod]
+        public void For_a_client_the_status_should_be_automatically_set_as_proposed()
+        {
+            var intervention = siteEngineer.CreateIntervention(newestClient);
+
+            Assert.AreEqual(InterventionStatuses.Instance.Proposed, intervention.Status);
+        }
+
+        [TestMethod]
+        public void For_a_client_with_type_the_status_should_be_automatically_set_as_proposed()
+        {
+            var intervention = siteEngineer.CreateIntervention(newestClient, InterventionTypes.Instance.HepatitisAvoidanceTraining);
+
+            Assert.AreEqual(InterventionStatuses.Instance.Proposed, intervention.Status);
+        }
+
+        [TestMethod]
+        public void Filled_in_with_valid_data_should_be_automatically_set_as_proposed()
+        {
+            var intervention = new Intervention();
+            intervention.FillInValidTestData();
+
+            Assert.AreEqual(InterventionStatuses.Instance.Proposed, intervention.Status);
+        }
     }
 }
