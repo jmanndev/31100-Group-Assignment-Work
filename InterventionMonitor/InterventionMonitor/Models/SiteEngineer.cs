@@ -21,6 +21,18 @@ namespace InterventionMonitor.Models
             set;
         }
 
+        public int ReturnMatchingClients()
+        {
+            int clientsInEngineerDistrict = 0;
+
+            for (int i = 0; i < Monitor.Instance.clients.Count; i++)
+            {
+                if (Monitor.Instance.clients[i].District == this.District)
+                    clientsInEngineerDistrict++;
+            }
+            return clientsInEngineerDistrict;
+        }
+
         public Client CreateClient(string name, string address)
         {
             if (string.IsNullOrWhiteSpace(name))
