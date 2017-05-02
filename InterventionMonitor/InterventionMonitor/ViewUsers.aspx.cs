@@ -83,7 +83,6 @@ namespace InterventionMonitor
             
             string s = lbUsers.SelectedItem.Value;
             Session["EmployeeID"] = lbUsers.SelectedItem.Value;
-            txtTest.Text = Session["EmployeeID"].ToString();
             Response.Redirect("EditEmployee.aspx");
         }
     }
