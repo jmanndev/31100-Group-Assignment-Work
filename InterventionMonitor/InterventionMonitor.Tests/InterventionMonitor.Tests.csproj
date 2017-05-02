@@ -59,6 +59,7 @@
     <Compile Include="When_a_engineer_creates_an_intervention_for_a_client_in_same_district.cs" />
     <Compile Include="When_a_engineer_creates_a_client.cs" />
     <Compile Include="When_a_engineer_views_clients.cs" />
+    <Compile Include="When_a_manager_lists_interventions_that_can_be_approved.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InterventionMonitor\InterventionMonitor.csproj">
