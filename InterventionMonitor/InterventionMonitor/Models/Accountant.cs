@@ -13,5 +13,15 @@ namespace InterventionMonitor.Models
     [NotMapped] // Not mapped to the DB as of yet.
     public class Accountant : ApplicationUser
     {
+
+        public void ChangeEngineerDistrict(SiteEngineer siteEngineer, District newDistrict)
+        {
+            siteEngineer.District = newDistrict;
+        }
+
+        public void ChangeManagerDistrict(Manager manager, District newDistrict)
+        {
+            manager.District = newDistrict;
+        }
     }
 }

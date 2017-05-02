@@ -27,6 +27,7 @@ namespace InterventionMonitor.Models
 
             for (int i = 0; i < Monitor.Instance.clients.Count; i++)
             {
+               
                 if (Monitor.Instance.clients[i].District == this.District)
                     clientsInEngineerDistrict++;
             }
