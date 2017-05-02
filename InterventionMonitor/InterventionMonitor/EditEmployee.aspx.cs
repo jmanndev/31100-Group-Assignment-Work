@@ -33,6 +33,22 @@ namespace InterventionMonitor
 
                 connection.Close();
 
+                string queryString3 = "SELECT * FROM Employee INNER JOIN Manager ON Employee.Id = Manager.EmployeeId WHERE EmployeeId = '" + Session["EmployeeID"].ToString() + "'";
+
+                SqlCommand comm3 = new SqlCommand(queryString3, connection);
+                connection.Open();
+
+                SqlDataReader reader3 = comm3.ExecuteReader();
+                lblDisplayEmployeeID.Text = Session["EmployeeID"].ToString();
+                while (reader3.Read())
+                {
+                    lblDisplayEmployeeName.Text = reader3["Name"].ToString();
+                    lblDisplayEmployeeUserName.Text = reader3["Username"].ToString();
+                    districtID = reader3["DistrictID"].ToString();
+                }
+
+                connection.Close();
+
 
                 string queryString2 = "SELECT * FROM District";
                 SqlCommand comm2 = new SqlCommand(queryString2, connection);
