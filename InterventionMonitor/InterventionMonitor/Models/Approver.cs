@@ -29,7 +29,7 @@ namespace InterventionMonitor.Models
         {
             if (interventionToApprove.CostRequired <= this.CostLimit && interventionToApprove.HoursRequired <= this.HourLimit)
             {
-                interventionToApprove.IsMarkedAsApproved(this);
+                interventionToApprove.MarkedAsApproved(this);
             }
         }
     }

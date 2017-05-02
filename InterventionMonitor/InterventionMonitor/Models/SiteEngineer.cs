@@ -23,12 +23,11 @@ namespace InterventionMonitor.Models
 
         public Client CreateClient(string name, string address)
         {
-            if (name == null && name.Equals(""))
+            if (string.IsNullOrWhiteSpace(name))
                 throw new ArgumentException("Name is required", "name");
             var client = new Client(name, address, this.District);
-            
-            //client.ID = Monitor.Instance.clients.Count; // TODO: hack, get rid as DB will fix the unique ID issue
-            //Monitor.Instance.clients.Add(client);
+
+            Monitor.Instance.clients.Add(client);
 
             return client;
         }
@@ -44,6 +43,16 @@ namespace InterventionMonitor.Models
         public Intervention CreateIntervention(Client client, InterventionType interventionType)
         {
             Intervention intervention = new Intervention(this, client, interventionType);
+
+            Monitor.Instance.interventions.Add(intervention);
+            return intervention;
+        }
+
+        public Intervention CreateIntervention(Client client, DateTime date, InterventionType interventionType,
+            decimal? overridingHoursRequired, decimal? overridingCostRequired, int remainingLife, string notes)
+        {
+            Intervention intervention = new Intervention(this, client, date, interventionType, 
+                overridingHoursRequired, overridingCostRequired, remainingLife, notes);
 
             Monitor.Instance.interventions.Add(intervention);
             return intervention;
