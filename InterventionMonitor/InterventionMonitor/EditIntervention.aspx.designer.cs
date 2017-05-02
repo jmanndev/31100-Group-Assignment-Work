@@ -10,7 +10,7 @@
 namespace InterventionMonitor {
     
     
-    public partial class CreateIntervention {
+    public partial class EditIntervention {
         
         /// <summary>
         /// lblClient control.
@@ -22,22 +22,13 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.Label lblClient;
         
         /// <summary>
-        /// ddlClient control.
+        /// lblClientValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlClient;
-        
-        /// <summary>
-        /// rfvForClient control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvForClient;
+        protected global::System.Web.UI.WebControls.Label lblClientValue;
         
         /// <summary>
         /// lblDistrict control.
@@ -67,49 +58,31 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.Label lblDate;
         
         /// <summary>
-        /// txtDate control.
+        /// lblDateValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.Label lblDateValue;
         
         /// <summary>
-        /// rfvForDate control.
+        /// lblType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvForDate;
+        protected global::System.Web.UI.WebControls.Label lblType;
         
         /// <summary>
-        /// lblTypes control.
+        /// lblTypeValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTypes;
-        
-        /// <summary>
-        /// ddlType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlType;
-        
-        /// <summary>
-        /// rfvForType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvForType;
+        protected global::System.Web.UI.WebControls.Label lblTypeValue;
         
         /// <summary>
         /// lblHoursRequired control.
@@ -121,40 +94,13 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.Label lblHoursRequired;
         
         /// <summary>
-        /// txtHoursRequired control.
+        /// lblHoursRequiredValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoursRequired;
-        
-        /// <summary>
-        /// ckbDefaultHoursRequired control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbDefaultHoursRequired;
-        
-        /// <summary>
-        /// rfvForHours control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvForHours;
-        
-        /// <summary>
-        /// rvForHours control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator rvForHours;
+        protected global::System.Web.UI.WebControls.Label lblHoursRequiredValue;
         
         /// <summary>
         /// lblCostRequired control.
@@ -166,49 +112,13 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.Label lblCostRequired;
         
         /// <summary>
-        /// txtCostRequired control.
+        /// lblCostRequiredValue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCostRequired;
-        
-        /// <summary>
-        /// lblCostRequiredUnit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCostRequiredUnit;
-        
-        /// <summary>
-        /// ckbDefaultCostRequired control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbDefaultCostRequired;
-        
-        /// <summary>
-        /// rfvForCost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvForCost;
-        
-        /// <summary>
-        /// rvForCost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RangeValidator rvForCost;
+        protected global::System.Web.UI.WebControls.Label lblCostRequiredValue;
         
         /// <summary>
         /// lblStatus control.
@@ -310,13 +220,13 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.ValidationSummary ApproveValidationSummary;
         
         /// <summary>
-        /// btnPropose control.
+        /// btnInspected control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPropose;
+        protected global::System.Web.UI.WebControls.Button btnInspected;
         
         /// <summary>
         /// btnApprove control.
@@ -326,5 +236,23 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnApprove;
+        
+        /// <summary>
+        /// btnComplete control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnComplete;
+        
+        /// <summary>
+        /// btnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCancel;
     }
 }

@@ -2,14 +2,21 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %></h2>
-    <div id="body-content" style="height: 308px">
-
-
-
-        <asp:ListBox ID="LbInterventions" runat="server" Height="249px" Width="400px"></asp:ListBox>
-
-        <div id="btnHolder" style="width: 400px;">
-            <asp:Button ID="BtnCreate" runat="server" Text="View Intervention" Style="float: right;" OnClick="BtnView_Click" />
-        </div>
+    <div id="body-content">
+        <asp:GridView ID="GwInterventions" runat="server"
+            AutoGenerateColumns="false"
+            OnRowEditing="GwInterventions_RowEditing">
+            <Columns>
+                <asp:BoundField DataField="ID"  HeaderText="ID" SortExpression="ID" />
+                <asp:BoundField DataField="DisplayClient"  HeaderText="Client" SortExpression="DisplayClient" />
+                <asp:BoundField DataField="DisplayDate"  HeaderText="Date" SortExpression="DisplayDate" />
+                <asp:BoundField DataField="DisplayType"  HeaderText="Type" SortExpression="DisplayType" />
+                <asp:BoundField DataField="HoursRequired"  HeaderText="Hours Required" SortExpression="HoursRequired" />
+                <asp:BoundField DataField="CostRequired"  HeaderText="Cost Required (AUD)" SortExpression="CostRequired" />
+                <asp:BoundField DataField="DisplayStatus"  HeaderText="Status" SortExpression="DisplayStatus" />
+                <asp:BoundField DataField="Life"  HeaderText="Remaining Life" SortExpression="Life" />
+                <asp:CommandField ShowEditButton="true" ButtonType="Button" />
+            </Columns>
+        </asp:GridView>
     </div>
 </asp:Content>

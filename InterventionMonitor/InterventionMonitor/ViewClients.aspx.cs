@@ -16,6 +16,7 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            #region George's version
             
             SqlConnection connection = DatabaseConnections.DataConnection;         
             string queryString = "Select * From Client";
@@ -29,13 +30,47 @@ namespace InterventionMonitor
             LbClients.DataBind();
             
             connection.Close();
+            
+            #endregion
+            #region Jono's version
+            /**
+            if (!IsPostBack)
+            {
 
+                SqlConnection connection = DatabaseConnections.DataConnection;
+                string queryString = "Select * From Client";
+                SqlCommand comm = new SqlCommand(queryString, connection);
+                connection.Open();
+                SqlDataReader reader = comm.ExecuteReader();
+
+                LbClients.DataSource = reader;
+                LbClients.DataTextField = "Name";
+                LbClients.DataValueField = "ID";
+                LbClients.DataBind();
+
+                connection.Close();
+            }
+            **/
+            #endregion
         }
 
         protected void BtnViewClient_Click(object sender, EventArgs e)
         {
+            #region George's version
+            
             var x = LbClients.SelectedValue;
             Response.Redirect("ViewClient.aspx");
+            #endregion
+            
+            #region Jono's version
+            /**
+            if (LbClients.SelectedItem != null)
+            {
+                Session["ClientID"] = LbClients.SelectedItem.Value;
+                Response.Redirect("ViewClient.aspx");
+            }
+            **/
+            #endregion
         }
 
         protected void BtnCreateClient_Click(object sender, EventArgs e)

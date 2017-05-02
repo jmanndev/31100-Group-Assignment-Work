@@ -57,16 +57,26 @@ namespace InterventionMonitor.Models
             Name = name;
             Address = address;
             District = district;
+          
+            AddClientToDB();
+        }
 
-            SqlConnection connection = DatabaseConnections.DataConnection;
-            string query = "INSERT INTO Client (Name, DistrictID, Address) VALUES (@Name, @DistrictID, @Address)";
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@Name", Name);
-            cmd.Parameters.AddWithValue("@DistrictID", District.ID);
-            cmd.Parameters.AddWithValue("@Address", Address);
-            connection.Open();
-            SqlDataReader reader = cmd.ExecuteReader();     
-            connection.Close();
+        void AddClientToDB()
+        {
+#if DEBUG
+            if (!UnitTestDetector.IsInUnitTest)
+#endif
+            {
+                SqlConnection connection = DatabaseConnections.DataConnection;
+                string query = "INSERT INTO Client (Name, DistrictID, Address) VALUES (@Name, @DistrictID, @Address)";
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Name", Name);
+                cmd.Parameters.AddWithValue("@DistrictID", District.ID);
+                cmd.Parameters.AddWithValue("@Address", Address);
+                connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                connection.Close();
+            }
         }
     }
 }

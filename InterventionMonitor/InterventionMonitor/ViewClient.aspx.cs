@@ -5,6 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
+using InterventionMonitor.DataAccess;
+using System.Data.SqlClient;
 
 namespace InterventionMonitor
 {
@@ -13,14 +16,38 @@ namespace InterventionMonitor
         protected void Page_Load(object sender, EventArgs e)
         {
             // REPLACE THIS CODE TO PULL DATA FOR INDIVIDUAL CLIENT FROM DB
-            
-            txtName.Text = "Database Name";
-            txtAddress.Text = "Database Address";
-            txtNotes.Text = "Database Notes";
 
-            LbInterventions.DataSource = Monitor.Instance.interventions;
-            LbInterventions.DataTextField = "DisplayValue";
-            LbInterventions.DataBind();
+            /*  SqlConnection conn = DatabaseConnections.DataConnection;
+              string query = "Select//";
+              SqlCommand command = new SqlCommand(query, conn);
+              conn.Open();
+              SqlDataReader reader = command.ExecuteReader();
+              */
+            if (!IsPostBack)
+            {
+                if (Session["ClientID"] != null)
+                {
+                    string clientID = Session["ClientID"].ToString();
+                    using (SqlConnection connection = DatabaseConnections.DataConnection) {
+                        string queryString = "Select 1 From Client Where ID=" + clientID;
+                        SqlCommand comm = new SqlCommand(queryString, connection);
+                        connection.Open();
+                        SqlDataReader reader = comm.ExecuteReader();
+
+                        //need to make the reader hold only one row.  currently its getting ALL data from multiple rows
+                        
+                            txtName.Text = reader["Name"].ToString();
+                            txtAddress.Text = reader["Address"].ToString();
+                            txtNotes.Text = reader["Notes"].ToString();
+                        
+                        reader.Close();
+                    }
+                }
+
+                LbInterventions.DataSource = Monitor.Instance.interventions;
+                LbInterventions.DataTextField = "DisplayValue";
+                LbInterventions.DataBind();
+            }
         }
 
         protected void BtnCreateIntervention_Click(object sender, EventArgs e)

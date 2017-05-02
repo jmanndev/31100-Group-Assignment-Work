@@ -10,34 +10,111 @@ namespace InterventionMonitor
 {
     public partial class CreateIntervention : System.Web.UI.Page
     {
-
         protected void Page_Load(object sender, EventArgs e)
         {
-         /*   ddlTypes.DataSource = InterventionTypes.Instance.AllTypes;
-            ddlTypes.DataTextField = "Name";
-            ddlTypes.DataBind(); */
+            if (!IsPostBack)
+            {
+                PopulateClients();
+                PopulateDistrict();
+                PopulateDate();
+                PopulateInterventionTypesAndDefaultHoursAndCost();
+                PopulateStatus();
+            }
         }
 
-        protected void SubmitButton_Click(object sender, EventArgs e)
+        void PopulateClients()
         {
-            //bool allFieldsPopulated = true; //make this variable name better...
-            //string errorMessage = "";
+            ddlClient.DataSource = Monitor.Instance.clients; // TODO: Populate with clients current user can see
+            ddlClient.DataTextField = "Name";
+            ddlClient.DataBind();
+        }
 
-            //if (txtName.Text.ToString().Equals(""))
-            //{
-            //    allFieldsPopulated = false;
-            //    errorMessage += "** Name is required.\n\n";
-            //}
+        void PopulateDistrict()
+        {
+            // TODO: Populate with current user's district
+        }
 
-            //if (allFieldsPopulated)
-            //{
-            //    Monitor.Instance.siteEngineers.First().CreateClient(txtName.Text, txtAddress.Text);
-            //    Response.Redirect("ViewClients.aspx");
-            //}
-            //else
-            //{
-            //    lblErrorMessage.Text = errorMessage;
-            //}
+        void PopulateDate()
+        {
+            txtDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+        }
+
+        void PopulateInterventionTypesAndDefaultHoursAndCost()
+        {
+            ddlType.DataSource = InterventionTypes.Instance.AllTypes;
+            ddlType.DataTextField = "Name";
+            ddlType.DataBind();
+            SetDefaultHoursAndCostFromSelectedType();
+        }
+
+        InterventionType GetSelectedInterventionType()
+        {
+            var selectedIndex = ddlType.SelectedIndex;
+            return InterventionTypes.Instance.AllTypes[selectedIndex];
+        }
+
+        void PopulateStatus()
+        {
+            lblStatusValue.Text = InterventionStatuses.Instance.Proposed.Name;
+        }
+
+        protected void ProposeButton_Click(object sender, EventArgs e)
+        {
+        }
+
+        protected void ApproveButton_Click(object sender, EventArgs e)
+        {
+        }
+
+        protected void ckbDefaultHoursRequired_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbDefaultHoursRequired.Checked)
+            {
+                txtHoursRequired.ReadOnly = true;
+                txtHoursRequired.Enabled = false;
+                PopulateHoursRequiredFromSelectedType();
+            }
+            else
+            {
+                txtHoursRequired.ReadOnly = false;
+                txtHoursRequired.Enabled = true;
+            }
+        }
+
+        void PopulateHoursRequiredFromSelectedType()
+        {
+            txtHoursRequired.Text = GetSelectedInterventionType().LabourHours.ToString();
+        }
+
+        protected void ckbDefaultCostRequired_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ckbDefaultCostRequired.Checked)
+            {
+                txtCostRequired.ReadOnly = true;
+                txtCostRequired.Enabled = false;
+                PopulateCostRequiredFromSelectedType();
+            }
+            else
+            {
+                txtCostRequired.ReadOnly = false;
+                txtCostRequired.Enabled = true;
+            }
+        }
+
+        void PopulateCostRequiredFromSelectedType()
+        {
+            txtCostRequired.Text = GetSelectedInterventionType().MaterialCost.ToString();
+        }
+
+        protected void ddlType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetDefaultHoursAndCostFromSelectedType();
+        }
+
+        void SetDefaultHoursAndCostFromSelectedType()
+        {
+            PopulateHoursRequiredFromSelectedType();
+            PopulateCostRequiredFromSelectedType();
         }
     }
 }
