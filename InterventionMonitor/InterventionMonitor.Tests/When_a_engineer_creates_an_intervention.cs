@@ -27,7 +27,7 @@ namespace InterventionMonitor.Tests
             var interventionCreated = siteEngineer.CreateIntervention(newestClient);
 
             Assert.IsNull(interventionCreated);
-            CollectionAssert.DoesNotContain(Monitor.Instance.interventions, interventionCreated);
+            CollectionAssert.DoesNotContain(Monitor.Instance.Interventions, interventionCreated);
         }
 
         [TestMethod]
@@ -38,7 +38,7 @@ namespace InterventionMonitor.Tests
             var interventionCreated = siteEngineer.CreateIntervention(newestClient);
 
             Assert.IsNotNull(interventionCreated);
-            CollectionAssert.DoesNotContain(Monitor.Instance.interventions, interventionCreated);
+            CollectionAssert.DoesNotContain(Monitor.Instance.Interventions, interventionCreated);
         }
 
         [TestMethod]

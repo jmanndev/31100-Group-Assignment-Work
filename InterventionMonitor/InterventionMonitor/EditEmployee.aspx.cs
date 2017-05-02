@@ -16,7 +16,7 @@ namespace InterventionMonitor
             if (!IsPostBack)
             {
                 string districtID = "";
-                SqlConnection connection = DatabaseConnections.DataConnection;
+                SqlConnection connection = DatabaseConnections.GetDataConnection();
                 string queryString = "SELECT * FROM Employee INNER JOIN SiteEngineer ON Employee.Id = SiteEngineer.EmployeeId WHERE EmployeeId = '" + Session["EmployeeID"].ToString() + "'";
 
                 SqlCommand comm = new SqlCommand(queryString, connection);
@@ -67,7 +67,7 @@ namespace InterventionMonitor
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = DatabaseConnections.DataConnection;
+            SqlConnection connection = DatabaseConnections.GetDataConnection();
             string query = "UPDATE SiteEngineer SET DistrictId = '" + ddlDistrict.SelectedValue.ToString() + "' WHERE EmployeeId = '" + Session["EmployeeId"] + "'"; 
             SqlCommand cmd = new SqlCommand(query, connection);
             //cmd.Parameters.AddWithValue("@DistrictID", ddlDistrict.SelectedValue);

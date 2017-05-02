@@ -18,5 +18,9 @@
                 <asp:CommandField ShowEditButton="true" ButtonType="Button" />
             </Columns>
         </asp:GridView>
+
+        <div class="button-container">
+            <asp:Button ID="btnCreateIntervention" runat="server" class="button-submit" Text="Create Intervention" OnClick="btnCreateIntervention_Click" />
+        </div>
     </div>
 </asp:Content>

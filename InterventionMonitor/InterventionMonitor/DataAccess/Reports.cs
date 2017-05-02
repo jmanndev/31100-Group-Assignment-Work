@@ -8,7 +8,7 @@ namespace InterventionMonitor.DataAccess
 {
     public class Reports
     {
-        SqlConnection connection = DatabaseConnections.DataConnection;
+        SqlConnection connection = DatabaseConnections.GetDataConnection();
         string queryString = "";
 
         public string TotalEngineerCost(string engineerID)

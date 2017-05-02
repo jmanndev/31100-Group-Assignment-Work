@@ -8,8 +8,28 @@ using System.Web;
 
 namespace InterventionMonitor.Models
 {
-    public class Client
+    public class Client : ITestableValidModel
     {
+        class DBColumnConstants
+        {
+            public const string Id = "ID";
+            public const string Name = "Name";
+            public const string DistrictId = "DistrictID";
+            public const string Address = "Address";
+            public const string Notes = "Notes";
+        }
+
+        public static class DBQueries
+        {
+            public static string SelectAll
+            {
+                get
+                {
+                    return "SELECT Id, Name, DistrictId, Address, Notes FROM Client";
+                }
+            }
+        }
+
         [Key]
         public int ID
         {
@@ -41,15 +61,18 @@ namespace InterventionMonitor.Models
             set;
         }
 
-        public string DisplayValue
+        public Client()
         {
-            get
-            {
-                string result = string.Format("{0}: {1}", ID, Name);
-                if (Address.Equals(""))
-                    result = string.Format("{0} at {1}", result, Address);
-                return result;
-            }
+        }
+
+        public Client(SqlDataReader reader)
+        {
+            ID = (int)reader[DBColumnConstants.Id];
+            Name = reader[DBColumnConstants.Name].ToString();
+            var districtId = (int)reader[DBColumnConstants.DistrictId];
+            District = Districts.Instance.FindDistrict(districtId);
+            Address = reader[DBColumnConstants.Address].ToString();
+            Notes = reader[DBColumnConstants.Notes].ToString();
         }
 
         public Client(string name, string address, District district)
@@ -67,7 +90,7 @@ namespace InterventionMonitor.Models
             if (!UnitTestDetector.IsInUnitTest)
 #endif
             {
-                SqlConnection connection = DatabaseConnections.DataConnection;
+                SqlConnection connection = DatabaseConnections.GetDataConnection();
                 string query = "INSERT INTO Client (Name, DistrictID, Address) VALUES (@Name, @DistrictID, @Address)";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@Name", Name);
@@ -77,6 +100,12 @@ namespace InterventionMonitor.Models
                 SqlDataReader reader = cmd.ExecuteReader();
                 connection.Close();
             }
+        }
+
+        public void FillInValidTestData()
+        {
+            Name = "Jenny";
+            District = Districts.Instance.Sydney;
         }
     }
 }

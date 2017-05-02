@@ -5,51 +5,49 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InterventionMonitor.Models;
-
+using Microsoft.AspNet.Identity;
 
 namespace InterventionMonitor
 {
     public partial class CreateClient : System.Web.UI.Page
     {
-
+        SiteEngineer engineer;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            MemoriseEngineer();
+            if (!IsPostBack)
+            {
+                PopulateDistrict();
+            }
         }
 
-        protected void SubmitButton_Click(object sender, EventArgs e)
+        void MemoriseEngineer()
         {
-            SubmitCreateClientForm();
+            var userId = Page.User.Identity.GetUserId();
+            if (userId != null)
+            {
+                engineer = Monitor.Instance.FindSiteEngineer(userId);
+            }
         }
 
-        private void SubmitCreateClientForm()
+        void PopulateDistrict()
         {
-            bool allFieldsPopulated = true; //make this variable name better...
-            string errorMessage = "";
-
-            if (txtName.Text.ToString().Equals(""))
+            if (engineer != null)
             {
-                allFieldsPopulated = false;
-                lblName.Font.Bold = true;
-                errorMessage += "** Name is required.<br/>";
+                lblDistrictValue.Text = engineer.District.Name;
             }
-            if (txtAddress.Text.ToString().Equals(""))
-            {
-                allFieldsPopulated = false;
-                lblAddress.Font.Bold = true;
-                errorMessage += "** Address is required.<br/>";
-            }
+        }
 
-            if (allFieldsPopulated)
+        protected void CreateButton_Click(object sender, EventArgs e)
+        {
+            if (IsValid)
             {
-                Monitor.Instance.siteEngineers.First().CreateClient(txtName.Text, txtAddress.Text);
+                if (engineer != null)
+                {
+                    engineer.CreateClient(txtName.Text, txtAddress.Text);
+                }
                 Response.Redirect("ViewClients.aspx");
             }
-            else
-            {
-                lblErrorMessage.Text = errorMessage;
-            }
-
         }
     }
 }

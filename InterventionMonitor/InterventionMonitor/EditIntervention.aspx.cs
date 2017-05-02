@@ -5,19 +5,22 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InterventionMonitor.Models;
+using Microsoft.AspNet.Identity;
 
 namespace InterventionMonitor
 {
     public partial class EditIntervention : System.Web.UI.Page
     {
         Intervention intervention;
+        Approver approver;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            MemoriseApprover();
+            MemoriseIntervention();
+
             if (!IsPostBack)
             {
-                PopulateIntervention();
-
                 if (intervention != null)
                 {
                     PopulateClient();
@@ -29,18 +32,27 @@ namespace InterventionMonitor
                     PopulateStatus();
                     PopulateLife();
                     PopulateNotes();
+                    SetVisibilityOfButtons();
                 }
             }
         }
 
-        void PopulateIntervention()
+        private void MemoriseApprover()
+        {
+            var userId = Page.User.Identity.GetUserId();
+            if (userId != null)
+            {
+                approver = Monitor.Instance.FindApprover(userId);
+            }
+        }
+
+        void MemoriseIntervention()
         {
             var interventionIDRaw = Session["InterventionID"];
             int interventionID;
             if (interventionIDRaw != null && int.TryParse(interventionIDRaw.ToString(), out interventionID))
             {
-                // TODO: Should InterventionID now be erased from the session?
-                intervention = Monitor.Instance.interventions.Find(x => x.ID.Equals(interventionID));
+                intervention = Monitor.Instance.FindIntervention(interventionID);
             }
         }
 
@@ -87,6 +99,57 @@ namespace InterventionMonitor
         private void PopulateNotes()
         {
             txtNotes.Text = intervention.Notes;
+        }
+
+        private void SetVisibilityOfButtons()
+        {
+            if (intervention != null && approver != null)
+            {
+                if (intervention.IsApproved)
+                {
+                    btnApprove.Visible = false;
+                }
+                else
+                {
+                    btnApprove.Enabled = approver.CanApproveIntervention(intervention);
+                    btnCancel.Visible = false;
+                    btnComplete.Visible = false;
+                }
+            }
+        }
+
+        protected void btnApprove_Click(object sender, EventArgs e)
+        {
+            if (intervention != null && approver != null)
+            {
+                var life = int.Parse(txtRemainingLife.Text);
+                var notes = txtNotes.Text;
+                intervention.Update(life, notes);
+                approver.ApproveIntervention(intervention);
+                Response.Redirect("ViewInterventions.aspx");
+            }
+        }
+
+        protected void btnComplete_Click(object sender, EventArgs e)
+        {
+            if (intervention != null && approver != null)
+            {
+                var life = int.Parse(txtRemainingLife.Text);
+                var notes = txtNotes.Text;
+                intervention.Complete(life, notes);
+                Response.Redirect("ViewInterventions.aspx");
+            }
+        }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            if (intervention != null && approver != null)
+            {
+                var life = int.Parse(txtRemainingLife.Text);
+                var notes = txtNotes.Text;
+                intervention.Cancel(life, notes);
+                Response.Redirect("ViewInterventions.aspx");
+            }
         }
     }
 }

@@ -12,23 +12,12 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LoadInMemoryInterventions();
-            GwInterventions.DataSource = Monitor.Instance.interventions;
-            GwInterventions.DataBind();
-        }
-
-        // TODO: Todel
-        void LoadInMemoryInterventions()
-        {
-            // TODO: Load from DB
-            if (Monitor.Instance.interventions.Count == 0)
+            if (!IsPostBack)
             {
-                var intervention1 = new Intervention();
-                intervention1.FillInValidTestData();
-                var intervention2 = new Intervention();
-                intervention2.FillInValidTestData();
-                Monitor.Instance.interventions.Add(intervention1);
-                Monitor.Instance.interventions.Add(intervention2);
+                GwInterventions.DataSource = Monitor.Instance.Interventions;
+                GwInterventions.DataBind();
+
+                btnCreateIntervention.Visible = Page.User.IsInRole("Site Engineer");
             }
         }
 
@@ -39,6 +28,11 @@ namespace InterventionMonitor
             Session["InterventionID"] = interventionID;
 
             Response.Redirect("EditIntervention.aspx");
+        }
+
+        protected void btnCreateIntervention_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateIntervention.aspx");
         }
     }
 }

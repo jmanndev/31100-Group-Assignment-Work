@@ -157,6 +157,15 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.RangeValidator rvForHours;
         
         /// <summary>
+        /// cvHourApproval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvHourApproval;
+        
+        /// <summary>
         /// lblCostRequired control.
         /// </summary>
         /// <remarks>
@@ -211,6 +220,15 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.RangeValidator rvForCost;
         
         /// <summary>
+        /// cvCostApproval control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvCostApproval;
+        
+        /// <summary>
         /// lblStatus control.
         /// </summary>
         /// <remarks>
@@ -227,15 +245,6 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblStatusValue;
-        
-        /// <summary>
-        /// cvApprovalConstraints control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvApprovalConstraints;
         
         /// <summary>
         /// lblRemainingLife control.
@@ -299,15 +308,6 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNotes;
-        
-        /// <summary>
-        /// ApproveValidationSummary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ApproveValidationSummary;
         
         /// <summary>
         /// btnPropose control.

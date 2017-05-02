@@ -50,21 +50,25 @@ namespace InterventionMonitor.Models
         private InterventionTypes()
         {
             SupplyMosquitoNet = new InterventionType();
+            SupplyMosquitoNet.ID = 1;
             SupplyMosquitoNet.Name = "Supply Mosquito Net";
             SupplyMosquitoNet.MaterialCost = 100;
             SupplyMosquitoNet.LabourHours = 2;
 
             SupplyAndInstallPortableToilet = new InterventionType();
+            SupplyAndInstallPortableToilet.ID = 2;
             SupplyAndInstallPortableToilet.Name = "Supply and Install Portable Toilet";
             SupplyAndInstallPortableToilet.MaterialCost = 1000;
             SupplyAndInstallPortableToilet.LabourHours = 10;
 
             HepatitisAvoidanceTraining = new InterventionType();
+            HepatitisAvoidanceTraining.ID = 3;
             HepatitisAvoidanceTraining.Name = "Hepatitis Avoidance Training";
             HepatitisAvoidanceTraining.MaterialCost = 500;
             HepatitisAvoidanceTraining.LabourHours = 20;
 
             SupplyAndInstallStormproofHomeKit = new InterventionType();
+            SupplyAndInstallStormproofHomeKit.ID = 4;
             SupplyAndInstallStormproofHomeKit.Name = "Supply and Install Storm-proof HomeKit";
             SupplyAndInstallStormproofHomeKit.MaterialCost = 5000;
             SupplyAndInstallStormproofHomeKit.LabourHours = 20;
@@ -84,6 +88,12 @@ namespace InterventionMonitor.Models
             }
         }
 
+        public InterventionType FindType(int typeId)
+        {
+            return AllTypes.FirstOrDefault(x => x.ID == typeId);
+        }
+
+        // These match with what's in the DB
         public readonly InterventionType SupplyMosquitoNet;
         public readonly InterventionType SupplyAndInstallPortableToilet;
         public readonly InterventionType HepatitisAvoidanceTraining;
