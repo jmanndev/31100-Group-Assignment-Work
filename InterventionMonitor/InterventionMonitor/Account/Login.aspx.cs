@@ -39,6 +39,7 @@ namespace InterventionMonitor.Account
                 {
                     case SignInStatus.Success:
                         IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        Session["UserID"] = User.Identity.GetUserId();
                         break;
                     case SignInStatus.LockedOut:
                         Response.Redirect("/Account/Lockout");

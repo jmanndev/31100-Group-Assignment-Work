@@ -57,7 +57,7 @@ namespace InterventionMonitor.Models
             Name = name;
             Address = address;
             District = district;
-
+          
             AddClientToDB();
         }
 

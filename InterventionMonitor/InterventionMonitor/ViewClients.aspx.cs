@@ -8,6 +8,7 @@ using InterventionMonitor.Models;
 using System.Data.SqlClient;
 using System.Configuration;
 using InterventionMonitor.DataAccess;
+using Microsoft.AspNet.Identity;
 
 namespace InterventionMonitor
 {
@@ -56,6 +57,7 @@ namespace InterventionMonitor
         protected void BtnViewClient_Click(object sender, EventArgs e)
         {
             #region George's version
+            
             var x = LbClients.SelectedValue;
             Response.Redirect("ViewClient.aspx");
             #endregion

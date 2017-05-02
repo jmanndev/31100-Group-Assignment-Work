@@ -13,13 +13,22 @@ namespace InterventionMonitor {
     public partial class SiteMaster {
         
         /// <summary>
-        /// menuAccountant control.
+        /// viewReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menuAccountant;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl viewReport;
+        
+        /// <summary>
+        /// viewUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl viewUser;
         
         /// <summary>
         /// MainContent control.
