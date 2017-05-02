@@ -222,6 +222,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Approvals.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -238,6 +239,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="CreateClient.aspx" />
+    <Content Include="ManagerView.aspx" />
     <Content Include="SiteEngineerHome.aspx" />
     <Content Include="ViewClient.aspx" />
     <Content Include="ViewInterventions.aspx" />
@@ -403,6 +405,13 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Approvals.aspx.cs">
+      <DependentUpon>Approvals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Approvals.aspx.designer.cs">
+      <DependentUpon>Approvals.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -435,6 +444,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerView.aspx.cs">
+      <DependentUpon>ManagerView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagerView.aspx.designer.cs">
+      <DependentUpon>ManagerView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Accountant.cs" />
     <Compile Include="Models\Approver.cs" />

@@ -74,6 +74,10 @@ namespace InterventionMonitor
                 viewReport.Visible = false;
                 viewUser.Visible = false;
             }
+            if (!Page.User.IsInRole("Manager"))
+            {
+                managerView.Visible = false;
+            }
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

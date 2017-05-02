@@ -56,6 +56,7 @@
                         <li><a runat="server" href="~/ViewInterventions">Interventions</a></li>
                         <li id="viewReport" runat="server"><a runat="server" href="~/ViewReports">Reports</a></li>
                         <li id="viewUser" runat="server"><a runat="server" href="~/ViewUsers">Users</a></li>
+                        <li id="managerView" runat="server"><a runat="server" href="~/ManagerView">Approvals</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
