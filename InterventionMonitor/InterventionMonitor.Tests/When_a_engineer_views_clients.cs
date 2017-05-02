@@ -9,8 +9,6 @@ namespace InterventionMonitor.Tests
     public class When_a_engineer_views_clients
     {
         SiteEngineer siteEngineerA;
-        SiteEngineer siteEngineerB;
-        SiteEngineer siteEngineerC;
 
         int clientsInSydney;
 
@@ -18,33 +16,22 @@ namespace InterventionMonitor.Tests
         public void Setup()
         {
             siteEngineerA = new SiteEngineer();
-            siteEngineerB = new SiteEngineer();
-            siteEngineerC = new SiteEngineer();
 
             siteEngineerA.District = Districts.Instance.Sydney;
-            siteEngineerB.District = Districts.Instance.RuralIndonesia;
-            siteEngineerC.District = Districts.Instance.UrbanIndonesia;
 
-            //SiteEngineer at Sydney has created 3 separate clients
-            //This count will attempt to match the Assert.AreEqual checker.
             clientsInSydney = 0;
-
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < Monitor.Instance.clients.Count; i++)
+            {
+                if (Monitor.Instance.clients[i].District == siteEngineerA.District)
+                    clientsInSydney++;
+            }
+            //SiteEngineer at Sydney has created 3 extra separate clients
+            //This count will attempt to match the Assert.AreEqual checker.
+            for (int i = 0; i < 3; i++)
             {
                 siteEngineerA.CreateClient("ClientA" + i, null);
                 clientsInSydney++;
             }
-
-            /*
-            siteEngineerA.CreateClient("ClientA1", null);
-            siteEngineerA.CreateClient("ClientA2", null);
-            siteEngineerA.CreateClient("ClientA3", null);
-            */
-
-            siteEngineerB.CreateClient("ClientB1", null);
-            siteEngineerB.CreateClient("ClientB2", null);
-
-            siteEngineerC.CreateClient("ClientC1", null);
         }
 
         [TestMethod]
