@@ -71,7 +71,8 @@ namespace InterventionMonitor
         {
             if (!Page.User.IsInRole("Accountant"))
             {
-                menuAccountant.Visible = false;
+                viewReport.Visible = false;
+                viewUser.Visible = false;
             }
         }
 

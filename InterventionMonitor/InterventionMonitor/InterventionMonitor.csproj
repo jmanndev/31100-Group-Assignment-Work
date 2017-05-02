@@ -243,6 +243,8 @@
     <Content Include="ViewClients.aspx" />
     <Content Include="LoginPage.aspx" />
     <Content Include="ViewReports.aspx" />
+    <Content Include="ViewUsers.aspx" />
+    <Content Include="EditEmployee.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -504,6 +506,20 @@
     </Compile>
     <Compile Include="ViewReports.aspx.designer.cs">
       <DependentUpon>ViewReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUsers.aspx.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewUsers.aspx.designer.cs">
+      <DependentUpon>ViewUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditEmployee.aspx.cs">
+      <DependentUpon>EditEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditEmployee.aspx.designer.cs">
+      <DependentUpon>EditEmployee.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -48,5 +48,6 @@ namespace InterventionMonitor.Models
             Monitor.Instance.interventions.Add(intervention);
             return intervention;
         }
+
     }
 }

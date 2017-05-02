@@ -8,6 +8,7 @@ using InterventionMonitor.Models;
 using System.Data.SqlClient;
 using System.Configuration;
 using InterventionMonitor.DataAccess;
+using Microsoft.AspNet.Identity;
 
 namespace InterventionMonitor
 {
