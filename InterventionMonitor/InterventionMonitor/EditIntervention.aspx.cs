@@ -30,6 +30,7 @@ namespace InterventionMonitor
                     PopulateHoursRequired();
                     PopulateCostRequired();
                     PopulateStatus();
+                    PopulateRequestedByAndApprovedBy();
                     PopulateLife();
                     PopulateNotes();
                     SetVisibilityOfButtons();
@@ -84,6 +85,12 @@ namespace InterventionMonitor
         private void PopulateCostRequired()
         {
             lblCostRequiredValue.Text = intervention.DisplayCost;
+        }
+
+        private void PopulateRequestedByAndApprovedBy()
+        {
+            lblRequestedByValue.Text = intervention.DisplayEngineer;
+            lblApprovedByValue.Text = intervention.DisplayApprover;
         }
 
         void PopulateStatus()

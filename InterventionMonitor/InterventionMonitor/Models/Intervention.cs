@@ -285,6 +285,16 @@ namespace InterventionMonitor.Models
             get { return Type.Name; }
         }
 
+        public string DisplayEngineer
+        {
+            get { return SiteEngineer.UserName; }
+        }
+
+        public string DisplayApprover
+        {
+            get { return ApprovedBy != null ? ApprovedBy.UserName : string.Empty; }
+        }
+
         public string DisplayDate
         {
             get { return Date.ToLongDateString(); }

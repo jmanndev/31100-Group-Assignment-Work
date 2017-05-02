@@ -35,8 +35,16 @@
         <asp:Label ID="lblCostRequiredValue" runat="server" Width="100px"></asp:Label>
         <br />
         <br />
+        <asp:Label ID="lblRequestedBy" runat="server" AssociatedControlID="lblRequestedByValue" Text="Proposed By" Width="120px"></asp:Label>
+        <asp:Label ID="lblRequestedByValue" runat="server" Width="150px"></asp:Label>
+        <br />
+        <br />
         <asp:Label ID="lblStatus" runat="server" Text="Status" Width="120px" AssociatedControlID="lblStatusValue"></asp:Label>
         <asp:Label ID="lblStatusValue" runat="server"></asp:Label>
+        <br />
+        <br />
+        <asp:Label ID="lblApprovedBy" runat="server" AssociatedControlID="lblApprovedByValue" Text="Approved By" Width="120px"></asp:Label>
+        <asp:Label ID="lblApprovedByValue" runat="server" Width="150px"></asp:Label>
         <br />
         <br />
         <asp:Label ID="lblRemainingLife" runat="server" Text="Remaining Life" Width="120px" AssociatedControlID="txtRemainingLife"></asp:Label>
