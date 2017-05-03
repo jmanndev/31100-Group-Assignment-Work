@@ -241,7 +241,6 @@
     <Content Include="CreateClient.aspx" />
     <Content Include="ManagerView.aspx" />
     <Content Include="SiteEngineerHome.aspx" />
-    <Content Include="ViewClient.aspx" />
     <Content Include="ViewInterventions.aspx" />
     <Content Include="ViewClients.aspx" />
     <Content Include="LoginPage.aspx" />
@@ -482,13 +481,6 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewClient.aspx.cs">
-      <DependentUpon>ViewClient.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewClient.aspx.designer.cs">
-      <DependentUpon>ViewClient.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
