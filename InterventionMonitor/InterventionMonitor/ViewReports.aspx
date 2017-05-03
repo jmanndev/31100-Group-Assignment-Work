@@ -20,6 +20,11 @@
     <asp:Button ID="btnRunReport" runat="server" Text="Generate Report" OnClick="btnRunReport_Click" />
     <br />
     <br />
+    <asp:GridView ID="GridView1" runat="server">
+    </asp:GridView>
+    <br />
+    <br />
     <asp:Label ID="lblResult" runat="server" Text="Cost: $"></asp:Label>
     <asp:Label ID="lblResultView" runat="server" Text=""></asp:Label>
+    
 </asp:Content>
