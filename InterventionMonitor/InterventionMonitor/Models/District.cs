@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -10,6 +11,7 @@ namespace InterventionMonitor.Models
         public int ID
         {
             get;
+            set;
         }
 
         public string Name
@@ -50,12 +52,19 @@ namespace InterventionMonitor.Models
                 return _instance;
             }
         }
-        public readonly District UrbanIndonesia = new District() { Name = "Urban Indonesia" };
-        public readonly District RuralIndonesia = new District() { Name = "Rural Indonesia" };
-        public readonly District UrbanPapuaNewGuinea = new District() { Name = "Urban Papua New Guinea" };
-        public readonly District RuralPapuaNewGuinea = new District() { Name = "Rural Papua New Guinea" };
-        public readonly District Sydney = new District() { Name = "Sydney" };
-        public readonly District RuralNewSouthWales = new District() { Name = "Rural New South Wales" };
+
+        public District FindDistrict(int districtId)
+        {
+            return AllDistricts.FirstOrDefault(x => x.ID == districtId);
+        }
+
+        // These match with what's in the DB
+        public readonly District UrbanIndonesia = new District() { ID = 1, Name = "Urban Indonesia" };
+        public readonly District RuralIndonesia = new District() { ID = 2, Name = "Rural Indonesia" };
+        public readonly District UrbanPapuaNewGuinea = new District() { ID = 3, Name = "Urban Papua New Guinea" };
+        public readonly District RuralPapuaNewGuinea = new District() { ID = 4, Name = "Rural Papua New Guinea" };
+        public readonly District Sydney = new District() { ID = 5, Name = "Sydney" };
+        public readonly District RuralNewSouthWales = new District() { ID = 6, Name = "Rural New South Wales" };
         public readonly List<District> AllDistricts = new List<District>();
     }
 }

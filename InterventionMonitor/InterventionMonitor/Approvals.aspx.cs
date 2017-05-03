@@ -16,7 +16,7 @@ namespace InterventionMonitor
         {
             string id = User.Identity.GetUserId();
             string districtId = "";
-            SqlConnection connection = DatabaseConnections.DataConnection;
+            SqlConnection connection = DatabaseConnections.GetDataConnection();
             string query = "Select DistrictId From Manager Where Manager.EmployeeId = '" + id +"'";
             SqlCommand comm = new SqlCommand(query, connection);
             connection.Open();

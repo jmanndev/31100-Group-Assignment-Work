@@ -10,13 +10,19 @@
                 <asp:BoundField DataField="ID"  HeaderText="ID" SortExpression="ID" />
                 <asp:BoundField DataField="DisplayClient"  HeaderText="Client" SortExpression="DisplayClient" />
                 <asp:BoundField DataField="DisplayDate"  HeaderText="Date" SortExpression="DisplayDate" />
+                <asp:BoundField DataField="DisplayEngineer"  HeaderText="Proposed By" SortExpression="DisplayEngineer" />
                 <asp:BoundField DataField="DisplayType"  HeaderText="Type" SortExpression="DisplayType" />
                 <asp:BoundField DataField="HoursRequired"  HeaderText="Hours Required" SortExpression="HoursRequired" />
                 <asp:BoundField DataField="CostRequired"  HeaderText="Cost Required (AUD)" SortExpression="CostRequired" />
                 <asp:BoundField DataField="DisplayStatus"  HeaderText="Status" SortExpression="DisplayStatus" />
+                <asp:BoundField DataField="DisplayApprover"  HeaderText="Approved By" SortExpression="DisplayApprover" />
                 <asp:BoundField DataField="Life"  HeaderText="Remaining Life" SortExpression="Life" />
                 <asp:CommandField ShowEditButton="true" ButtonType="Button" />
             </Columns>
         </asp:GridView>
+
+        <div class="button-container">
+            <asp:Button ID="btnCreateIntervention" runat="server" class="button-submit" Text="Create Intervention" OnClick="btnCreateIntervention_Click" />
+        </div>
     </div>
 </asp:Content>

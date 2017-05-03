@@ -22,13 +22,13 @@ namespace InterventionMonitor.Tests
             var clientA = siteEngineer.CreateClient("client A", null);
             Assert.IsNotNull(clientA);
             Assert.AreEqual(Districts.Instance.Sydney, clientA.District);
-            CollectionAssert.Contains(Monitor.Instance.clients, clientA);
+            CollectionAssert.Contains(Monitor.Instance.Clients, clientA);
 
             siteEngineer.District = Districts.Instance.RuralIndonesia;
             var clientB = siteEngineer.CreateClient("client B", null);
             Assert.IsNotNull(clientB);
             Assert.AreEqual(Districts.Instance.RuralIndonesia, clientB.District);
-            CollectionAssert.Contains(Monitor.Instance.clients, clientB);
+            CollectionAssert.Contains(Monitor.Instance.Clients, clientB);
         }
 
         [TestMethod]
@@ -37,7 +37,7 @@ namespace InterventionMonitor.Tests
         {
             var client = siteEngineer.CreateClient(null, null);
             Assert.IsNull(client);
-            CollectionAssert.DoesNotContain(Monitor.Instance.clients, client);
+            CollectionAssert.DoesNotContain(Monitor.Instance.Clients, client);
         }
     }
 }

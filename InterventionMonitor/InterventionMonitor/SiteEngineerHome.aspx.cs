@@ -12,17 +12,6 @@ namespace InterventionMonitor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Monitor monitor = Monitor.Instance;
-            SiteEngineer siteEngi = new SiteEngineer();
-
-            //populating dummy data 
-            siteEngi.UserName = "Bob";
-            siteEngi.District = Districts.Instance.RuralNewSouthWales;
-            monitor.siteEngineers.Add(siteEngi);
-            //siteEngi.CreateClient("Troy", "Fake address");
-            InterventionType type = new InterventionType();
-            type.Name = "Mozzie net";
-            //siteEngi.CreateIntervention(monitor.clients.Where(x => x.Name == "Troy").First(), type);
         }
 
         protected void BtnMyClients_Click(object sender, EventArgs e)
@@ -38,6 +27,11 @@ namespace InterventionMonitor
         protected void BtnCreateClient_Click(object sender, EventArgs e)
         {
             Response.Redirect("CreateClient.aspx");
+        }
+
+        protected void BtnCreateIntervention_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CreateIntervention.aspx");
         }
     }
 }

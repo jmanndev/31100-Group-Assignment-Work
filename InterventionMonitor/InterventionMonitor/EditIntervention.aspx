@@ -35,9 +35,16 @@
         <asp:Label ID="lblCostRequiredValue" runat="server" Width="100px"></asp:Label>
         <br />
         <br />
+        <asp:Label ID="lblRequestedBy" runat="server" AssociatedControlID="lblRequestedByValue" Text="Proposed By" Width="120px"></asp:Label>
+        <asp:Label ID="lblRequestedByValue" runat="server" Width="150px"></asp:Label>
+        <br />
+        <br />
         <asp:Label ID="lblStatus" runat="server" Text="Status" Width="120px" AssociatedControlID="lblStatusValue"></asp:Label>
         <asp:Label ID="lblStatusValue" runat="server"></asp:Label>
-        <asp:CustomValidator ID="cvApprovalConstraints" runat="server" ErrorMessage="CustomValidator" ValidationGroup="ApproveValidation"></asp:CustomValidator>
+        <br />
+        <br />
+        <asp:Label ID="lblApprovedBy" runat="server" AssociatedControlID="lblApprovedByValue" Text="Approved By" Width="120px"></asp:Label>
+        <asp:Label ID="lblApprovedByValue" runat="server" Width="150px"></asp:Label>
         <br />
         <br />
         <asp:Label ID="lblRemainingLife" runat="server" Text="Remaining Life" Width="120px" AssociatedControlID="txtRemainingLife"></asp:Label>
@@ -55,14 +62,12 @@
         <asp:TextBox ID="txtNotes" runat="server" Width="361px" TextMode="MultiLine"></asp:TextBox>
 
         <br />
-        <asp:ValidationSummary ID="ApproveValidationSummary" runat="server" ForeColor="Red" ValidationGroup="ApproveValidation" />
         <br />
 
-        <div id="button-container" style="width: 463px;">
-            <asp:Button ID="btnInspected" runat="server" Text="Inspected" Style="float: right;"></asp:Button>
-            <asp:Button ID="btnApprove" runat="server" Style="float: right;" Text="Approve" ValidationGroup="ApproveValidation" />
-            <asp:Button ID="btnComplete" runat="server" Style="float: right;" Text="Complete" Visible="False" />
-            <asp:Button ID="btnCancel" runat="server" Style="float: left;" Text="Cancel" />
+        <div class="button-container">
+            <asp:Button ID="btnApprove" runat="server" class="button-submit" Text="Approve Intervention" OnClick="btnApprove_Click" />
+            <asp:Button ID="btnComplete" runat="server" class="button-submit" Text="Complete Intervention" OnClick="btnComplete_Click" />
+            <asp:Button ID="btnCancel" runat="server" class="button-cancel" Text="Cancel Intervention" OnClick="btnCancel_Click" />
         </div>
 
     </div>

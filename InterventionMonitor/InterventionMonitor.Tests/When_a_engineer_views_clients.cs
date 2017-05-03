@@ -20,9 +20,9 @@ namespace InterventionMonitor.Tests
             siteEngineerA.District = Districts.Instance.Sydney;
 
             clientsInSydney = 0;
-            for(int i = 0; i < Monitor.Instance.clients.Count; i++)
+            for(int i = 0; i < Monitor.Instance.Clients.Count; i++)
             {
-                if (Monitor.Instance.clients[i].District == siteEngineerA.District)
+                if (Monitor.Instance.Clients[i].District == siteEngineerA.District)
                     clientsInSydney++;
             }
             //SiteEngineer at Sydney has created 3 extra separate clients

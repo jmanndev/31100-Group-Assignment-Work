@@ -9,6 +9,9 @@ namespace InterventionMonitor.DataAccess
 {
     public class DatabaseConnections
     {
-           public static SqlConnection DataConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DataConnection"].ToString());
+        public static SqlConnection GetDataConnection()
+        {
+            return new SqlConnection(ConfigurationManager.ConnectionStrings["DataConnection"].ToString());
+        }
     }
 }

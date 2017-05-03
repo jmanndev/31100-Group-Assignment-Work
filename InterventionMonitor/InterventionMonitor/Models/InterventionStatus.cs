@@ -37,6 +37,10 @@ namespace InterventionMonitor.Models
 
         private InterventionStatuses()
         {
+            AllStatuses.Add(Proposed);
+            AllStatuses.Add(Approved);
+            AllStatuses.Add(Cancelled);
+            AllStatuses.Add(Completed);
         }
 
         private static readonly InterventionStatuses _instance = new InterventionStatuses();
@@ -47,9 +51,17 @@ namespace InterventionMonitor.Models
                 return _instance;
             }
         }
-        public InterventionStatus Proposed = new InterventionStatus() { Name = "Proposed" };
-        public InterventionStatus Approved = new InterventionStatus() { Name = "Approved" };
-        public InterventionStatus Cancelled = new InterventionStatus() { Name = "Cancelled" };
-        public InterventionStatus Completed = new InterventionStatus() { Name = "Completed" };
+
+        public InterventionStatus FindStatus(int statusId)
+        {
+            return AllStatuses.FirstOrDefault(x => x.ID == statusId);
+        }
+
+        // These match with what's in the DB
+        public InterventionStatus Proposed = new InterventionStatus() { ID = 1, Name = "Proposed" };
+        public InterventionStatus Approved = new InterventionStatus() { ID = 2, Name = "Approved" };
+        public InterventionStatus Cancelled = new InterventionStatus() { ID = 3, Name = "Cancelled" };
+        public InterventionStatus Completed = new InterventionStatus() { ID = 4, Name = "Completed" };
+        readonly List<InterventionStatus> AllStatuses = new List<InterventionStatus>();
     }
 }

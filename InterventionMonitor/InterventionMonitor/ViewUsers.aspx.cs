@@ -15,7 +15,7 @@ namespace InterventionMonitor
         {
             if (!IsPostBack)
             {
-                SqlConnection connection = DatabaseConnections.DataConnection;
+                SqlConnection connection = DatabaseConnections.GetDataConnection();
                 string queryString = "Select * From Employee";
                 SqlCommand comm = new SqlCommand(queryString, connection);
                 connection.Open();
@@ -32,7 +32,7 @@ namespace InterventionMonitor
 
         protected void btnAll_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = DatabaseConnections.DataConnection;
+            SqlConnection connection = DatabaseConnections.GetDataConnection();
             string queryString = "Select * From Employee";
             SqlCommand comm = new SqlCommand(queryString, connection);
             connection.Open();
@@ -48,7 +48,7 @@ namespace InterventionMonitor
 
         protected void btnEngineer_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = DatabaseConnections.DataConnection;
+            SqlConnection connection = DatabaseConnections.GetDataConnection();
             string queryString = "SELECT * FROM Employee INNER JOIN SiteEngineer ON Employee.Id = SiteEngineer.EmployeeId";
             SqlCommand comm = new SqlCommand(queryString, connection);
             connection.Open();
@@ -64,7 +64,7 @@ namespace InterventionMonitor
 
         protected void btnManager_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = DatabaseConnections.DataConnection;
+            SqlConnection connection = DatabaseConnections.GetDataConnection();
             string queryString = "SELECT * FROM Employee INNER JOIN Manager ON Employee.Id = Manager.EmployeeId";
             SqlCommand comm = new SqlCommand(queryString, connection);
             connection.Open();

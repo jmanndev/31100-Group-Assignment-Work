@@ -121,6 +121,24 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.Label lblCostRequiredValue;
         
         /// <summary>
+        /// lblRequestedBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRequestedBy;
+        
+        /// <summary>
+        /// lblRequestedByValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRequestedByValue;
+        
+        /// <summary>
         /// lblStatus control.
         /// </summary>
         /// <remarks>
@@ -139,13 +157,22 @@ namespace InterventionMonitor {
         protected global::System.Web.UI.WebControls.Label lblStatusValue;
         
         /// <summary>
-        /// cvApprovalConstraints control.
+        /// lblApprovedBy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvApprovalConstraints;
+        protected global::System.Web.UI.WebControls.Label lblApprovedBy;
+        
+        /// <summary>
+        /// lblApprovedByValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblApprovedByValue;
         
         /// <summary>
         /// lblRemainingLife control.
@@ -209,24 +236,6 @@ namespace InterventionMonitor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNotes;
-        
-        /// <summary>
-        /// ApproveValidationSummary control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ApproveValidationSummary;
-        
-        /// <summary>
-        /// btnInspected control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInspected;
         
         /// <summary>
         /// btnApprove control.

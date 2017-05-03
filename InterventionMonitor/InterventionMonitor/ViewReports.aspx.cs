@@ -24,7 +24,7 @@ namespace InterventionMonitor
                 ddlReports.DataSource = reports;
                 ddlReports.DataBind();
 
-                SqlConnection connection = DatabaseConnections.DataConnection;
+                SqlConnection connection = DatabaseConnections.GetDataConnection();
 
                 string queryString = "SELECT * FROM District";
                 SqlCommand comm = new SqlCommand(queryString, connection);

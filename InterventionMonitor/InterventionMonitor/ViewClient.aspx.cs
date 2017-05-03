@@ -28,7 +28,7 @@ namespace InterventionMonitor
                 if (Session["ClientID"] != null)
                 {
                     string clientID = Session["ClientID"].ToString();
-                    using (SqlConnection connection = DatabaseConnections.DataConnection) {
+                    using (SqlConnection connection = DatabaseConnections.GetDataConnection()) {
                         string queryString = "Select 1 From Client Where ID=" + clientID;
                         SqlCommand comm = new SqlCommand(queryString, connection);
                         connection.Open();
@@ -44,8 +44,8 @@ namespace InterventionMonitor
                     }
                 }
 
-                LbInterventions.DataSource = Monitor.Instance.interventions;
-                LbInterventions.DataTextField = "DisplayValue";
+                LbInterventions.DataSource = Monitor.Instance.Interventions;
+                LbInterventions.DataTextField = "DisplayValue"; // TODO: Turn into GridView
                 LbInterventions.DataBind();
             }
         }

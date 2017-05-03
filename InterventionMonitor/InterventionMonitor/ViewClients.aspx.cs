@@ -18,7 +18,7 @@ namespace InterventionMonitor
         {
             #region George's version
             
-            SqlConnection connection = DatabaseConnections.DataConnection;         
+            SqlConnection connection = DatabaseConnections.GetDataConnection();         
             string queryString = "Select * From Client";
             SqlCommand comm = new SqlCommand(queryString, connection);
             connection.Open();
