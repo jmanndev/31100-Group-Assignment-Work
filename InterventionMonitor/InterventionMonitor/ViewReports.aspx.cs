@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using InterventionMonitor.Models;
 
 namespace InterventionMonitor
 {
@@ -70,25 +71,41 @@ namespace InterventionMonitor
             
             //checks to see which query has been selected and calls appropriate methods
             if (ddlReports.SelectedItem.ToString().Equals("Total cost by engineer"))
-            {    
+            {
+                var results = from i in Monitor.Instance.Interventions where i.SiteEngineer.Id.Equals(engineerID) select i;
                 decimal result = Decimal.Parse(report.TotalEngineerCost(engineerID));
                 lblResultView.Text = Math.Round(result, 2).ToString();
+                GridView1.DataSource = results;
+                GridView1.DataBind();
             }
             else if(ddlReports.SelectedItem.ToString().Equals("Average cost by engineer"))
             {
+                var results = from i in Monitor.Instance.Interventions where i.SiteEngineer.Id.Equals(engineerID) select i;
                 decimal result = Decimal.Parse(report.AverageEngineerCost(engineerID));
                 lblResultView.Text = Math.Round(result, 2).ToString();
+                GridView1.DataSource = results;
+                GridView1.DataBind();
             }
             else if(ddlReports.SelectedItem.ToString().Equals("Cost by district"))
             {
+                var results = from i in Monitor.Instance.Interventions where i.Client.District.ID == int.Parse(districtID) select i;
                 decimal result = Decimal.Parse(report.TotalDistrictCost(districtID));
                 lblResultView.Text = Math.Round(result, 2).ToString();
+                GridView1.DataSource = results;
+                GridView1.DataBind();
             }
             //not funtional 
             else if(ddlReports.SelectedItem.ToString().Equals("Monthly costs for district"))
             {
 
             }
+            else
+            {
+
+            }
+            
+            
+            
         }
 
         //controls visibility of engineer and district control, hides and shows appropriate controls based on selected report.
