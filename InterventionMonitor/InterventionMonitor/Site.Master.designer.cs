@@ -13,6 +13,42 @@ namespace InterventionMonitor {
     public partial class SiteMaster {
         
         /// <summary>
+        /// engineerHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl engineerHome;
+        
+        /// <summary>
+        /// createClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl createClient;
+        
+        /// <summary>
+        /// viewClient control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl viewClient;
+        
+        /// <summary>
+        /// viewIntervention control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl viewIntervention;
+        
+        /// <summary>
         /// viewReport control.
         /// </summary>
         /// <remarks>

@@ -50,10 +50,10 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/CreateClient">Create Client</a></li>
-                        <li><a runat="server" href="~/SiteEngineerHome">Home</a></li>
-                        <li><a runat="server" href="~/ViewClients">Clients</a></li>
-                        <li><a runat="server" href="~/ViewInterventions">Interventions</a></li>
+                        <li id="engineerHome" runat="server"><a runat="server" href="~/SiteEngineerHome">Home</a></li>
+                        <li id="createClient" runat="server"><a runat="server" href="~/CreateClient">Create Client</a></li>
+                        <li id="viewClient" runat="server"><a runat="server" href="~/ViewClients">Clients</a></li>
+                        <li id="viewIntervention" runat="server"><a runat="server" href="~/ViewInterventions">Interventions</a></li>
                         <li id="viewReport" runat="server"><a runat="server" href="~/ViewReports">Reports</a></li>
                         <li id="viewUser" runat="server"><a runat="server" href="~/ViewUsers">Users</a></li>
                         <li id="managerView" runat="server"><a runat="server" href="~/ManagerView">Approvals</a></li>

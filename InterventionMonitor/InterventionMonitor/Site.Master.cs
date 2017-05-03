@@ -67,8 +67,19 @@ namespace InterventionMonitor
             }
         }
 
+        //controls the visibility of navigation bar based on role
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.User.IsInRole("Site Engineer") && !Page.User.IsInRole("Manager"))
+            {
+                viewIntervention.Visible = false;
+            }
+                if (!Page.User.IsInRole("Site Engineer"))
+            {
+                createClient.Visible = false;
+                engineerHome.Visible = false;
+                viewClient.Visible = false;
+            }
             if (!Page.User.IsInRole("Accountant"))
             {
                 viewReport.Visible = false;

@@ -11,9 +11,10 @@ namespace InterventionMonitor.DataAccess
         SqlConnection connection = DatabaseConnections.GetDataConnection();
         string queryString = "";
 
+        //query to get total cost of an engineers interventions
         public string TotalEngineerCost(string engineerID)
         {
-            string result = "";
+            string result = "0";
             queryString = "SELECT SUM(MaterialCost) AS TotalCost FROM Intervention WHERE SiteEngineerId ='" + engineerID + "'";
             SqlCommand comm = new SqlCommand(queryString, connection);
             connection.Open();
@@ -28,9 +29,10 @@ namespace InterventionMonitor.DataAccess
             return result;
         }
 
+        //query to get average cost of the engineers interventions
         public string AverageEngineerCost(string engineerID)
         {
-            string result = "";
+            string result = "0";
             queryString = "SELECT AVG(MaterialCost) AS TotalCost FROM Intervention WHERE SiteEngineerId ='" + engineerID + "'";
             SqlCommand comm = new SqlCommand(queryString, connection);
             connection.Open();
@@ -43,6 +45,7 @@ namespace InterventionMonitor.DataAccess
             return result;
         }
 
+        //query to get the total cost of interventions for the district
         public string TotalDistrictCost(string districtID)
         {
             string result = "";
@@ -55,6 +58,10 @@ namespace InterventionMonitor.DataAccess
                 result = reader[0].ToString();
             }
             connection.Close();
+            if(result.Equals(""))
+            {
+                return "0";
+            }
             return result;
         }
 

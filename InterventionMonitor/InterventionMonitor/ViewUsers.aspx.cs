@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace InterventionMonitor
 {
+    // Populates controls with relevant query items - note:meant to take out all bd calls but ran out of time
     public partial class ViewUsers : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace InterventionMonitor
             }
         }
 
+        //populates the list box with all employees
         protected void btnAll_Click(object sender, EventArgs e)
         {
             SqlConnection connection = DatabaseConnections.GetDataConnection();
@@ -46,6 +48,7 @@ namespace InterventionMonitor
             connection.Close();
         }
 
+        //populates the listbox with all employees of type site engineer
         protected void btnEngineer_Click(object sender, EventArgs e)
         {
             SqlConnection connection = DatabaseConnections.GetDataConnection();
@@ -62,6 +65,7 @@ namespace InterventionMonitor
             connection.Close();
         }
 
+        //populates the listbox with all employees of type manager
         protected void btnManager_Click(object sender, EventArgs e)
         {
             SqlConnection connection = DatabaseConnections.GetDataConnection();
@@ -80,7 +84,7 @@ namespace InterventionMonitor
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
-            
+            //stashes the selected employee ID into a session item
             string s = lbUsers.SelectedItem.Value;
             Session["EmployeeID"] = lbUsers.SelectedItem.Value;
             Response.Redirect("EditEmployee.aspx");
