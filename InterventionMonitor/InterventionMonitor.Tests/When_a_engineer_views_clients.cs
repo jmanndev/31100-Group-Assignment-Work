@@ -18,13 +18,15 @@ namespace InterventionMonitor.Tests
             siteEngineerA = new SiteEngineer();
 
             siteEngineerA.District = Districts.Instance.Sydney;
-
+       
+            //Initiliases clientInSydney variable 
             clientsInSydney = 0;
             for(int i = 0; i < Monitor.Instance.Clients.Count; i++)
             {
                 if (Monitor.Instance.Clients[i].District == siteEngineerA.District)
                     clientsInSydney++;
             }
+
             //SiteEngineer at Sydney has created 3 extra separate clients
             //This count will attempt to match the Assert.AreEqual checker.
             for (int i = 0; i < 3; i++)
@@ -38,9 +40,7 @@ namespace InterventionMonitor.Tests
         public void In_their_current_district_then_display_matching_amount_of_clients_in_current_district()
         {
             int matchedClients = siteEngineerA.ReturnMatchingClients();
-            Assert.AreEqual(clientsInSydney, matchedClients);
-
-            
+            Assert.AreEqual(clientsInSydney, matchedClients); 
         }
     }
 }

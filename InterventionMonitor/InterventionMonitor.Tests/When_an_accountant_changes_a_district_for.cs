@@ -29,6 +29,7 @@ namespace InterventionMonitor.Tests
         {
             accountant.ChangeEngineerDistrict(siteEngineer, Districts.Instance.Sydney);
 
+            //Checks to see if the site engineers district was changed successfully
             Assert.AreEqual(Districts.Instance.Sydney, siteEngineer.District);
         }
 
@@ -37,6 +38,7 @@ namespace InterventionMonitor.Tests
         {
             accountant.ChangeManagerDistrict(manager, Districts.Instance.Sydney);
 
+            //Chcks to see if the managers district was changed successfully
             Assert.AreEqual(Districts.Instance.Sydney, manager.District);
         }
     }
