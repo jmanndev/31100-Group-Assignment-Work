@@ -5,25 +5,19 @@
 * Wen Yen George Du (11747969)
 * Jordan Labonne (12002491)
 
-## Pages to Do ##
-See below for list of pages that are pending.  Please mark the progress on them as you work on it.
+## Database Script ##
+There are two versions of the Database Script depending on the SQL Server 2012 or 2014.
+- FinalScriptForSSMS2012.sql
+- FinalScriptForSSMS2014.sql
 
-|Screen|Status|Notes|
-|---|---|---|
-|Login|in progress||
-|Registration|in progress||
-|Main Page (page changes based on user role: site engineer, manager, accountant)|files exist|assumes site engineer currently|
-|Create a client|implemented|could implement some form of data validation other than not null, otherwise completed|
-|View/manage single client (with associated interventions) (could double as EDIT page)|in progress|displays dummy data, needs to implement db connection|
-|View list of all clients|implemented||
-|Create an intervention|in progress|display logged in engineer's district; display only clients in same district; implement approval and propose; displays in-memory data, needs to implement db connection|
-|View/manage single intervention|in progress|implement cancel, approval, complete and inspected; displays in-memory data, needs to implement db connection|
-|View list of all interventions|implemented|displays in-memory data, needs to implement db connection|
-|View list of all interventions user is 'owner' of|||
-|View list of all interventions filtered by status|||
-|List of managers|||
-|List of site engineers|||
-|Report generation page|||
+The scripts will create two databases, `ENET` and `ECare2`. 
+
+## Logins ##
+Site engineer:engineer@test
+Manager:manager@test
+Accountant:accountant@test
+
+All passwords for the three logins:abc123
 
 ## To run project ##
 ### update `IIS\config\applicationhost.config` ###
@@ -94,5 +88,3 @@ Here's a working example of a `connectionstrings.config` file:
   ```
 - Boolean class variables should be named with an `is` (or `are` for plurals) prefix,  e.g. `public bool isApproved` or `public bool areValidEntries`
 - Tab spaces. Use default VS2015 Community settings which seems to be Tab Size 4. Indent Size 4. Insert Spaces.
-### Version Control ###
-- For each commit message, have it start with an active verb. E.g. `Update code standards on README file.`
